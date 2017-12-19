@@ -1,0 +1,30 @@
+
+
+
+<ion-content padding style=" padding-left: 100px !important;" id="page4" class="main-bg-color">
+ 
+ <div class="login-container"> 
+  <h1 id="login-heading1" class="font-base" >
+    ระบบบริหารจัดการรับซื้อสินค้าเกษตร
+  </h1>
+  <form  [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">
+    <ion-item  style="background-color: transparent;" id="login-input3" [ngClass]="{'error-border':!authForm.controls.username.valid && authForm.controls.username.touched}">
+      <!-- <ion-label  floating>Enter your Username</ion-label> -->
+      <ion-input class="input-clear-style" type="text"  formControlName="username" placeholder="Enter your Username"></ion-input>
+    </ion-item>
+    <ion-item style="background-color: transparent;" [ngClass]="{'error-border':!authForm.controls.password.valid && authForm.controls.password.touched}">
+     <!-- <ion-label floating>Password</ion-label> -->
+      <ion-input type="password"  class="input-clear-style" formControlName="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <div style="margin-top:20px;">
+      <button class="submit-login"   ion-button round outline color="light"   [disabled]="!authForm.valid"  type="submit">log in</button>  
+    </div>
+  </form>
+
+  <div id="login-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
+    <p style="color:#FFFFFF;">
+      Forgot Password?
+    </p>
+  </div>
+ </div>
+</ion-content>

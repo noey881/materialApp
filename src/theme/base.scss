@@ -1,0 +1,61 @@
+
+
+p{
+ // font-size: 20px;
+}
+
+.input-clear-style{
+
+  color:white;
+}
+
+
+@font-face {
+  font-family: 'DB Helvethaica X 55';
+  src: url('../assets/fonts/DBHelvethaicaX-55Regular.eot');
+  src: url('../assets/fonts/DBHelvethaicaX-55Regular.eot?#iefix') format('embedded-opentype'),
+      url('../assets/fonts/DBHelvethaicaX-55Regular.woff2') format('woff2'),
+      url('../assets/fonts/DBHelvethaicaX-55Regular.woff') format('woff'),
+      url('../assets/fonts/DBHelvethaicaX-55Regular.ttf') format('truetype'),
+      url('../assets/fonts/DBHelvethaicaX-55Regular.svg#DBHelvethaicaX-55Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  //font-size: 20vh !important;
+}
+
+/* Mixin */
+@mixin vertical-align($position: relative) {
+
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  
+}
+
+.main-bg-color{
+
+  background: -moz-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(214,255,254,1)), color-stop(100%, rgba(59,173,255,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* ie10+ */
+  background: linear-gradient(37deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3BADFF', endColorstr='#D6FFFE',GradientType=0 ); /* ie6-9 */
+}
+
+.toolbar-background {
+  
+  // background: rgba(59,173,255,1) !important;
+  // color:white !important;
+}
+ion-content{
+
+  background: rbg(236,244,250) !important;
+}
+
+ion-app.cameraView, ion-app.cameraView ion-content.test, ion-app.cameraView .nav-decor {
+  background: transparent none !important; 
+}

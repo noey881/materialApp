@@ -1,0 +1,19 @@
+page-create-order-add-material {
+    .label, label-md{
+
+        color:black !important;
+    }
+
+
+    .add-material-style  .item-md.item-block .item-inner{
+        border-bottom: 1px solid #ccc !important;
+      }
+
+      .add-material-style .item-input:last-child{
+        border-bottom-color: transparent !important;
+        }
+
+        .input-text-alight-right input{
+            text-align: right;
+        }
+}

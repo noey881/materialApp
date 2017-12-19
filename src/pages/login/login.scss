@@ -1,0 +1,51 @@
+page-login {
+
+
+    /* Mixin */
+
+  
+    ion-item{
+        background-color:transparent; 
+    }
+    // ion-label{
+    //     color: white;
+    // }
+
+  
+
+    .font-base{
+      //  font-family: "DB Helvethaica X 55";
+       // font-size: xx-large;
+        color: color($colors, light);
+        text-align:center;
+    }
+
+
+    .error-border{
+
+       border-color: white;
+    } 
+
+
+
+
+    .login-container{
+      //  @include vertical-align();
+
+        width: 480px; margin: 0 auto 0;
+        margin-top:15vh;
+    }
+
+    .button-container{
+        width: 480px;
+    }
+    .input-clear-style{
+       // font-size: 1.5em;
+    }
+    .submit-login{
+        width: 50%;
+        margin-left: 100px;
+        color:white;
+     //   font-size: large;
+    }
+}

@@ -1,0 +1,86 @@
+<!--
+  Generated template for the CreateOrderAddMaterialPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>สร้างรายการจัดซื้อ</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        
+        <ion-card>
+
+          <ion-card-header>
+            สร้างรายการ
+          </ion-card-header>
+        
+          <ion-card-content class="add-material-style">
+          <ion-list>
+            <ion-item>
+              <ion-label>ชนิดยาเส้น</ion-label>
+              <ion-select [(ngModel)]="productSel" (ionChange)="onProductTypeChange($event)" placeholder="เลือกชนิดยาเส้น">
+                <ion-option *ngFor="let item of producTypeObj" [value]="item.PRODUCT_TYPE_ID">{{item.PRODUCT_TYPE_NAME}}</ion-option>
+              </ion-select>
+            </ion-item>
+
+            
+            <ion-item>
+                <ion-label>เบอร์ยาเส้น</ion-label>
+                <ion-select [disabled]="!isGetData" (ionChange)="onProductSizeChange($event)" [(ngModel)]="productSizeSel" placeholder="เลือกเบอร์ยาเส้น">
+                  <ion-option *ngFor="let item of producSizeObj" [value]="item.PRODUCT_SIZE_ID">{{item.PRODUCT_SIZE_NAME}}</ion-option>
+                </ion-select>
+             
+              </ion-item>
+
+              <ion-item >
+                  <ion-label>จำนวนถุง</ion-label>
+                  <ion-input class="input-text-alight-right" type="number" placeholder="0" value="0"></ion-input>
+                </ion-item>
+
+                <ion-item >
+                  <ion-label>น้ำหนัก/กิโลกรัม</ion-label>
+                  <ion-input class="input-text-alight-right" type="text" [disabled]="true" placeholder="0" value="0">0</ion-input>
+                </ion-item>
+                <ion-item >
+                  <ion-label>ราคา/ถุง</ion-label>
+                  <ion-input class="input-text-alight-right" type="text" [disabled]="true" value="0">0</ion-input>
+                </ion-item>
+
+          
+          </ion-list>
+          </ion-card-content>
+        
+        </ion-card>
+
+      </ion-col>
+      <ion-col col-6>
+        
+        <ion-card>
+
+          <ion-card-header>
+            รายการซื้อ
+          </ion-card-header>
+        
+          <ion-card-content>
+            <!-- Add card content here! -->
+          </ion-card-content>
+        
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+   
+  </ion-grid>
+
+</ion-content>

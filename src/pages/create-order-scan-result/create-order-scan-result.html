@@ -1,0 +1,89 @@
+<!--
+  Generated template for the CreateOrderScanResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ผลแสกน</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngIf="isData" class="card-container">
+    <ion-card-content style="text-align: center;">
+      <ion-grid *ngIf="querySataus">
+        <ion-row>
+          <ion-col col-12>
+            <ion-icon class="status-icon correct" name="ios-checkmark-circle-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <p class="result-text correct">แสกนสำเร็จ</p>
+          </ion-col>
+        </ion-row>
+
+
+
+        <ion-row style="padding:0">
+          <ion-col col-12>
+            <p class="name-text">{{resultData.name}}</p>
+            <p class="userType-text">{{resultData.userType}}</p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-12>
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-12>
+            <p class="address-text">{{resultData.address}}</p>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row justify-content-center>
+            <!-- <ion-col col-6>
+                <button ion-button block color="light">ยกเลิกการทำรายการ</button>
+            </ion-col> -->
+            <ion-col col-6>
+                <button ion-button block on-click="nextPage()">สร้างรายการจัดซื้อ</button>
+            </ion-col>
+          </ion-row> 
+
+      </ion-grid>
+
+
+
+
+      <ion-grid *ngIf="!querySataus">
+        <ion-row>
+          <ion-col col-12>
+            <ion-icon class="status-icon wrong" name="ios-close-circle-outline"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <p class="add-new-text">
+              ไม่พบรายการ
+            </p>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+
+
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

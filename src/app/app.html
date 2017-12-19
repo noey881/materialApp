@@ -1,0 +1,41 @@
+<ion-split-pane>
+  <ion-menu ng-hide="true" type="push" [content]="mainContent">
+
+    <ion-content class="main-bg-color" id="side-menu21">
+      <ion-card text-center class="hide-card">
+        <img src="assets/imgs/avatar/default.png" class="custom-avatar" />
+        <h1>Name</h1>
+        <h2>Have some p tag here</h2>
+      </ion-card>
+
+      <ion-list id="menu-list1">
+
+
+        <ion-item color="white" menuClose="" on-click="goToCreateOrder()" id="menu-list-item1">
+          <ion-icon name="barcode" item-left></ion-icon>
+          ทำรายการรับซื้อ
+        </ion-item>
+
+        <ion-item color="white" menuClose="" on-click="goToReport()" id="menu-list-item1">
+          <ion-icon name="barcode" item-left></ion-icon>
+          รายงานประจำวัน
+        </ion-item>
+        <!-- <ion-item color="none" menuClose="" on-click="goToList()" id="menu-list-item2">
+          <ion-icon name="ionic" item-left></ion-icon>
+          รายชื่อคนกลาง
+        </ion-item> -->
+        <ion-item color="none" menuClose="" on-click="goToPage3()" id="menu-list-item3">
+          <ion-icon name="ionic" item-left></ion-icon>
+          นโยบาย และข้อตกลงในการรับซื้อ
+        </ion-item>
+        <ion-item color="none" menuClose="" on-click="goToSettings()" id="menu-list-item20">
+          <ion-icon name="settings" item-left></ion-icon>
+          ตั้งค่า
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-nav main #mainContent [root]="rootPage"></ion-nav>
+
+</ion-split-pane>

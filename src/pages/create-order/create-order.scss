@@ -1,0 +1,17 @@
+page-create-order {
+    .add-icon{
+      
+        font-size: 30vw;
+        color: rgb(140, 160, 190);
+        text-align: center;
+    }
+
+    .card-container{
+       // @include vertical-align();
+    }
+    .add-new-text{
+        color: rgb(140, 160, 190);
+        font-size: 5vw;
+        text-align: center;
+    }
+}

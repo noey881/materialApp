@@ -1,0 +1,43 @@
+page-create-order-scan-result {
+    .status-icon{
+        
+          font-size: 10vw;
+        
+          text-align: center;
+      }
+
+      .correct{
+          color: green;
+      }
+      .wrong{
+          color: red;
+      }
+.name-text{
+    color: black;
+    font-size: 4vw;
+    text-align: center;
+}
+
+.userType-text{
+    color: blue;
+    font-size: 3vw;
+    text-align: center;
+
+}
+.address-text{
+    color: #cccccc;
+    font-size: 2vw;
+    text-align: center;
+
+}
+    .result-text{
+        color: green;
+        font-size: 3vw;
+        text-align: center;
+    }
+      .add-new-text{
+        color: rgb(140, 160, 190);
+        font-size: 5vw;
+        text-align: center;
+    }
+}
