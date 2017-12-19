@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		01049DC3141E4FF38337FC6E /* GCDWebServerStreamedResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3787B260B7E04170988CF348 /* GCDWebServerStreamedResponse.m */; };
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
@@ -51,6 +50,8 @@
 		EDA57E5628BA404BADCBDB7F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A58D7647C02C44CE9B37823F /* AFSecurityPolicy.m */; };
 		F2236DA7CC7C40878582498C /* GCDWebServerDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 083B0A4E48F54F81A1264506 /* GCDWebServerDataResponse.m */; };
 		FA37BA3B4B1D48618092B89E /* GCDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D4C1BC08B041BC92C0C0E4 /* GCDWebServer.m */; };
+		D136449BB95545E193DD9FD8 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CC293F80304B46958F441B /* CDVLocation.m */; };
+		E28C6EFE80E647BBA64736B6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4EFDE43F6B4EBFA12DE2CC /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,9 @@
 		FCEB09730A344AA4AFB275AD /* QRScanner.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = QRScanner.swift; path = "cordova-plugin-qrscanner/QRScanner.swift"; sourceTree = "<group>"; };
 		FED1CF9C1D364290B1266068 /* WebKit.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FFC7413B6B324A3AA7926942 /* CDVDevice.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; };
+		77CC293F80304B46958F441B /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		4C2C2B63BE254D32984AD357 /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		0F4EFDE43F6B4EBFA12DE2CC /* CoreLocation.framework */ = {isa = PBXFileReference; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +186,7 @@
 				70D41A1F8D904B6DBE6E0321 /* libz.tbd in Frameworks */,
 				880D6689F83A4FA39FAE3FB5 /* Security.framework in Frameworks */,
 				52F1041434AB485E8EB0B3FF /* SystemConfiguration.framework in Frameworks */,
+				E28C6EFE80E647BBA64736B6 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +261,7 @@
 				20D637A777094B2FAF49EF2E /* libz.tbd */,
 				B1D6BE58CEA94FD18DE1FDB1 /* Security.framework */,
 				02FBA490E3804F779D7671F0 /* SystemConfiguration.framework */,
+				0F4EFDE43F6B4EBFA12DE2CC /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,6 +356,8 @@
 				CDE6467BEB1E43F380403142 /* AFURLRequestSerialization.h */,
 				021C5884B034403B95DDFFDB /* AFURLResponseSerialization.h */,
 				07EF50CAE11649D4A5C39236 /* AFURLSessionManager.h */,
+				77CC293F80304B46958F441B /* CDVLocation.m */,
+				4C2C2B63BE254D32984AD357 /* CDVLocation.h */,
 			);
 			name = Plugins;
 			path = "buy-material/Plugins";
@@ -516,6 +524,7 @@
 				7BFA3EBA92C64861ACB6396B /* AFURLRequestSerialization.m in Sources */,
 				BA84EFFEDC734F14B3942C35 /* AFURLResponseSerialization.m in Sources */,
 				70DD70A630C24E9383CD721E /* AFURLSessionManager.m in Sources */,
+				D136449BB95545E193DD9FD8 /* CDVLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

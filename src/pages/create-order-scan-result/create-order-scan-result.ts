@@ -28,9 +28,9 @@ export class CreateOrderScanResultPage {
               ,public loadingCtrl: LoadingController) {
     this.statusIcon = "ios-checkmark-circle-outline";
     this.querySataus = true;
-    this.scannerId = this.navParams.get('id');
+    
     console.log(this.scannerId)
-
+    this.scannerId = this.navParams.get('id');
 
     // this.resultData = { 
     //   "name":"john doh",
@@ -54,7 +54,12 @@ export class CreateOrderScanResultPage {
 
     this.loader.present()
     this.isData = false;
+  
 
+
+    if(this.scannerId === ""){
+      this.scannerId = "undefined";
+    }
     let obj = {
       "serviceName":"users",
       "getvalue":this.scannerId
@@ -64,12 +69,38 @@ export class CreateOrderScanResultPage {
     this.restProvider.getService(obj).then(data => {
       this.isData = true;
       this.currentData = data;
-      this.loader.dismiss();
+
+
+      let fullname = data['data']["FIRSTNAME"] +" "+data['data']["LASTNAME"];
+      let userType = data['data']["USER_TYPE"]
+      let address = data['data']["ADDR"]
       this.resultData = { 
-        "name": data['data']["FIRSTNAME"] +" "+data['data']["LASTNAME"],
-        "userType": data['data']["USER_TYPE"],
-        "address":"bangkok"
-      }     
+        "name": "",
+        "userType": "",
+        "address": ""
+      }  
+
+      console.log("datastatus=="+data["status"]);
+      if(!data["status"]){
+         this.querySataus = false;
+      }else{
+        this.querySataus = true;
+        this.resultData = { 
+          "name": name,
+          "userType": userType,
+          "address": address
+        }    
+      }
+      this.loader.dismiss();
+    }).catch(error => {
+      this.isData = true;
+      this.querySataus = false;
+      this.loader.dismiss();
+
+      console.log("thisis")
+      console.log(error);
+
+
     });
   }
 

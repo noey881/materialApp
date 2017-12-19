@@ -30,6 +30,9 @@
     },
     "cordova-plugin-advanced-http": {
       "PACKAGE_NAME": "com.802.material"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.802.material"
     }
   },
   "dependent_plugins": {

@@ -40,8 +40,12 @@ export class CreateOrderAddMaterialPage {
     });
     
     this.loader.present()
+    let obj = {
+      "serviceName":"get_type_product",
+      "getvalue":""
+    }
 
-    this.restProvider.getTypeProduct().then(data => {
+    this.restProvider.getService(obj).then(data => {
       console.log(data)
       this.producTypeObj = data["data"];
       this.loader.dismiss();
@@ -66,12 +70,15 @@ export class CreateOrderAddMaterialPage {
   getSizeProductFn(productId){
 
    // this.loader.present();
-
-    this.restProvider.getSizeProduct(productId).then(data => {
+   let obj = {
+          "serviceName":"get_product",
+          "getvalue":productId
+        }
+    this.restProvider.getService(obj).then(data => {
       console.log(data)
     
       this.producSizeObj = data["data"];
-      this.isGetData =data['status'];
+      this.isGetData = data['status'];
   
      // this.loader.dismiss();
     

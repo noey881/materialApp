@@ -27,9 +27,6 @@
             <p class="result-text correct">แสกนสำเร็จ</p>
           </ion-col>
         </ion-row>
-
-
-
         <ion-row style="padding:0">
           <ion-col col-12>
             <p class="name-text">{{resultData.name}}</p>
@@ -64,7 +61,7 @@
 
 
 
-      <ion-grid *ngIf="!querySataus">
+      <ion-grid *ngIf="querySataus == false">
         <ion-row>
           <ion-col col-12>
             <ion-icon class="status-icon wrong" name="ios-close-circle-outline"></ion-icon>

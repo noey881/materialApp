@@ -38,110 +38,15 @@ export class RestProvider {
 
   }
 
-
-
-
-
-
-  getUserData(scannerId){
-    let that = this;
-    let url = this.apiUrl+'/bms_dev/api/users/'+scannerId;
-
-    return new Promise((resolve,reject) => {
-
-
-      if(!this.isCore){
-        this.httpClient.get(url, { responseType: 'json' }).subscribe(data => {
-          console.log("callsuccess")
-          console.log(data)
-          resolve(data);
-        }, err => {
-          console.log("error=");
-          console.log(err);
-        });
-      }else{
-
-        this.http.setRequestTimeout(this.timeout);
-        this.http.get(url, {}, {})
-        .then(data => {
-          console.log(data.data)
-          resolve(JSON.parse(data.data));
-        })
-        
-        .catch(error => {
-          console.log(error.status);
-          console.log(error.error); // error message as string
-          console.log(error.headers);
-          reject(error);
-        });
-      }
-    });
-  }
-
-  getTypeProduct(){
-    let url =  this.apiUrl+"/bms_dev/api/get_type_product";
-
-    return new Promise((resolve,reject) => {
-      if(!this.isCore){
-        this.httpClient.get(url, { responseType: 'json' }).subscribe(data => {
-          console.log("callsuccess")
-          console.log(data)
-          resolve(data);
-        }, err => {
-          console.log("error=");
-          console.log(err);
-          
-        });
-      }else{
-        this.http.get(url, {}, {})
-        .then(data => {
-          console.log(data.data)
-          resolve(JSON.parse(data.data));
-        })
-        .catch(error => {
-          console.log(error.status);
-          console.log(error.error); // error message as string
-          console.log(error.headers);
-          reject(error)
-        });
-      }
-    });
-  }
-
-  getSizeProduct(productId){
-    let url =  this.apiUrl+"/bms_dev/api/get_product/"+productId;
-
-    return new Promise(resolve => {
-      if(!this.isCore){
-        this.httpClient.get(url, { responseType: 'json' }).subscribe(data => {
-          console.log("callsuccess")
-          console.log(data)
-          resolve(data);
-        }, err => {
-          console.log("error=");
-          console.log(err);
-        });
-      }else{
-        this.http.get(url, {}, {})
-        .then(data => {
-          console.log(data.data)
-          resolve(JSON.parse(data.data));
-        })
-        .catch(error => {
-          console.log(error.status);
-          console.log(error.error); // error message as string
-          console.log(error.headers);
-        });
-      }
-    });
-  }
-
-
-
+  /**
+   * This function use for call service By get method
+   * @param obj 
+   * 
+   */
   public getService(obj){
 
     let url = this.apiUrl+"/bms_dev/api/" + obj.serviceName + "/" + obj.getvalue
-
+    console.log("url call = "+url);
     return new Promise((resolve,reject) => {
       if(!this.isCore){
         this.httpClient.get(url, { responseType: 'json' }).subscribe(data => {
@@ -168,10 +73,6 @@ export class RestProvider {
         });
       }
     });
-
-
-
-
   }
 
 

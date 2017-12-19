@@ -24,7 +24,7 @@ var Page3Page = (function () {
     }
     Page3Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-page3',template:/*ion-inline-start:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/page3/page3.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      นโยบาย\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page3"></ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/page3/page3.html"*/
+            selector: 'page-page3',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/page3/page3.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      นโยบาย\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page3"></ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/page3/page3.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
     ], Page3Page);
@@ -170,8 +170,8 @@ var CreateOrderScanResultPage = (function () {
         this.isData = false;
         this.statusIcon = "ios-checkmark-circle-outline";
         this.querySataus = true;
-        this.scannerId = this.navParams.get('id');
         console.log(this.scannerId);
+        this.scannerId = this.navParams.get('id');
         // this.resultData = { 
         //   "name":"john doh",
         //   "userType":"ผู้ขาย",
@@ -189,6 +189,9 @@ var CreateOrderScanResultPage = (function () {
         });
         this.loader.present();
         this.isData = false;
+        if (this.scannerId === "") {
+            this.scannerId = "undefined";
+        }
         var obj = {
             "serviceName": "users",
             "getvalue": this.scannerId
@@ -196,12 +199,33 @@ var CreateOrderScanResultPage = (function () {
         this.restProvider.getService(obj).then(function (data) {
             _this.isData = true;
             _this.currentData = data;
-            _this.loader.dismiss();
+            var fullname = data['data']["FIRSTNAME"] + " " + data['data']["LASTNAME"];
+            var userType = data['data']["USER_TYPE"];
+            var address = data['data']["ADDR"];
             _this.resultData = {
-                "name": data['data']["FIRSTNAME"] + " " + data['data']["LASTNAME"],
-                "userType": data['data']["USER_TYPE"],
-                "address": "bangkok"
+                "name": "",
+                "userType": "",
+                "address": ""
             };
+            console.log("datastatus==" + data["status"]);
+            if (!data["status"]) {
+                _this.querySataus = false;
+            }
+            else {
+                _this.querySataus = true;
+                _this.resultData = {
+                    "name": name,
+                    "userType": userType,
+                    "address": address
+                };
+            }
+            _this.loader.dismiss();
+        }).catch(function (error) {
+            _this.isData = true;
+            _this.querySataus = false;
+            _this.loader.dismiss();
+            console.log("thisis");
+            console.log(error);
         });
     };
     CreateOrderScanResultPage.prototype.nextPage = function () {
@@ -213,12 +237,12 @@ var CreateOrderScanResultPage = (function () {
     };
     CreateOrderScanResultPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-create-order-scan-result',template:/*ion-inline-start:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/create-order-scan-result/create-order-scan-result.html"*/'<!--\n  Generated template for the CreateOrderScanResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>ผลแสกน</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card *ngIf="isData" class="card-container">\n    <ion-card-content style="text-align: center;">\n      <ion-grid *ngIf="querySataus">\n        <ion-row>\n          <ion-col col-12>\n            <ion-icon class="status-icon correct" name="ios-checkmark-circle-outline"></ion-icon>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <p class="result-text correct">แสกนสำเร็จ</p>\n          </ion-col>\n        </ion-row>\n\n\n\n        <ion-row style="padding:0">\n          <ion-col col-12>\n            <p class="name-text">{{resultData.name}}</p>\n            <p class="userType-text">{{resultData.userType}}</p>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-12>\n\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-12>\n            <p class="address-text">{{resultData.address}}</p>\n          </ion-col>\n        </ion-row>\n\n\n        <ion-row justify-content-center>\n            <!-- <ion-col col-6>\n                <button ion-button block color="light">ยกเลิกการทำรายการ</button>\n            </ion-col> -->\n            <ion-col col-6>\n                <button ion-button block on-click="nextPage()">สร้างรายการจัดซื้อ</button>\n            </ion-col>\n          </ion-row> \n\n      </ion-grid>\n\n\n\n\n      <ion-grid *ngIf="!querySataus">\n        <ion-row>\n          <ion-col col-12>\n            <ion-icon class="status-icon wrong" name="ios-close-circle-outline"></ion-icon>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <p class="add-new-text">\n              ไม่พบรายการ\n            </p>\n          </ion-col>\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/create-order-scan-result/create-order-scan-result.html"*/,
+            selector: 'page-create-order-scan-result',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order-scan-result/create-order-scan-result.html"*/'<!--\n  Generated template for the CreateOrderScanResultPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>ผลแสกน</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-card *ngIf="isData" class="card-container">\n    <ion-card-content style="text-align: center;">\n      <ion-grid *ngIf="querySataus">\n        <ion-row>\n          <ion-col col-12>\n            <ion-icon class="status-icon correct" name="ios-checkmark-circle-outline"></ion-icon>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <p class="result-text correct">แสกนสำเร็จ</p>\n          </ion-col>\n        </ion-row>\n        <ion-row style="padding:0">\n          <ion-col col-12>\n            <p class="name-text">{{resultData.name}}</p>\n            <p class="userType-text">{{resultData.userType}}</p>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-12>\n\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-12>\n            <p class="address-text">{{resultData.address}}</p>\n          </ion-col>\n        </ion-row>\n\n\n        <ion-row justify-content-center>\n            <!-- <ion-col col-6>\n                <button ion-button block color="light">ยกเลิกการทำรายการ</button>\n            </ion-col> -->\n            <ion-col col-6>\n                <button ion-button block on-click="nextPage()">สร้างรายการจัดซื้อ</button>\n            </ion-col>\n          </ion-row> \n\n      </ion-grid>\n\n\n\n\n      <ion-grid *ngIf="querySataus == false">\n        <ion-row>\n          <ion-col col-12>\n            <ion-icon class="status-icon wrong" name="ios-close-circle-outline"></ion-icon>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <p class="add-new-text">\n              ไม่พบรายการ\n            </p>\n          </ion-col>\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order-scan-result/create-order-scan-result.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
     ], CreateOrderScanResultPage);
     return CreateOrderScanResultPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=create-order-scan-result.js.map
@@ -271,7 +295,11 @@ var CreateOrderAddMaterialPage = (function () {
             dismissOnPageChange: false
         });
         this.loader.present();
-        this.restProvider.getTypeProduct().then(function (data) {
+        var obj = {
+            "serviceName": "get_type_product",
+            "getvalue": ""
+        };
+        this.restProvider.getService(obj).then(function (data) {
             console.log(data);
             _this.producTypeObj = data["data"];
             _this.loader.dismiss();
@@ -288,9 +316,13 @@ var CreateOrderAddMaterialPage = (function () {
         //this.getSizeProduct(selectedValue);
     };
     CreateOrderAddMaterialPage.prototype.getSizeProductFn = function (productId) {
-        // this.loader.present();
         var _this = this;
-        this.restProvider.getSizeProduct(productId).then(function (data) {
+        // this.loader.present();
+        var obj = {
+            "serviceName": "get_product",
+            "getvalue": productId
+        };
+        this.restProvider.getService(productId).then(function (data) {
             console.log(data);
             _this.producSizeObj = data["data"];
             _this.isGetData = data['status'];
@@ -299,12 +331,12 @@ var CreateOrderAddMaterialPage = (function () {
     };
     CreateOrderAddMaterialPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-create-order-add-material',template:/*ion-inline-start:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/create-order-add-material/create-order-add-material.html"*/'<!--\n  Generated template for the CreateOrderAddMaterialPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>สร้างรายการจัดซื้อ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6>\n        \n        <ion-card>\n\n          <ion-card-header>\n            สร้างรายการ\n          </ion-card-header>\n        \n          <ion-card-content class="add-material-style">\n          <ion-list>\n            <ion-item>\n              <ion-label>ชนิดยาเส้น</ion-label>\n              <ion-select [(ngModel)]="productSel" (ionChange)="onProductTypeChange($event)" placeholder="เลือกชนิดยาเส้น">\n                <ion-option *ngFor="let item of producTypeObj" [value]="item.PRODUCT_TYPE_ID">{{item.PRODUCT_TYPE_NAME}}</ion-option>\n              </ion-select>\n            </ion-item>\n\n            \n            <ion-item>\n                <ion-label>เบอร์ยาเส้น</ion-label>\n                <ion-select [disabled]="!isGetData" (ionChange)="onProductSizeChange($event)" [(ngModel)]="productSizeSel" placeholder="เลือกเบอร์ยาเส้น">\n                  <ion-option *ngFor="let item of producSizeObj" [value]="item.PRODUCT_SIZE_ID">{{item.PRODUCT_SIZE_NAME}}</ion-option>\n                </ion-select>\n             \n              </ion-item>\n\n              <ion-item >\n                  <ion-label>จำนวนถุง</ion-label>\n                  <ion-input class="input-text-alight-right" type="number" placeholder="0" value="0"></ion-input>\n                </ion-item>\n\n                <ion-item >\n                  <ion-label>น้ำหนัก/กิโลกรัม</ion-label>\n                  <ion-input class="input-text-alight-right" type="text" [disabled]="true" placeholder="0" value="0">0</ion-input>\n                </ion-item>\n                <ion-item >\n                  <ion-label>ราคา/ถุง</ion-label>\n                  <ion-input class="input-text-alight-right" type="text" [disabled]="true" value="0">0</ion-input>\n                </ion-item>\n\n          \n          </ion-list>\n          </ion-card-content>\n        \n        </ion-card>\n\n      </ion-col>\n      <ion-col col-6>\n        \n        <ion-card>\n\n          <ion-card-header>\n            รายการซื้อ\n          </ion-card-header>\n        \n          <ion-card-content>\n            <!-- Add card content here! -->\n          </ion-card-content>\n        \n        </ion-card>\n\n      </ion-col>\n    </ion-row>\n   \n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/create-order-add-material/create-order-add-material.html"*/,
+            selector: 'page-create-order-add-material',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order-add-material/create-order-add-material.html"*/'<!--\n  Generated template for the CreateOrderAddMaterialPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>สร้างรายการจัดซื้อ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6>\n        \n        <ion-card>\n\n          <ion-card-header>\n            สร้างรายการ\n          </ion-card-header>\n        \n          <ion-card-content class="add-material-style">\n          <ion-list>\n            <ion-item>\n              <ion-label>ชนิดยาเส้น</ion-label>\n              <ion-select [(ngModel)]="productSel" (ionChange)="onProductTypeChange($event)" placeholder="เลือกชนิดยาเส้น">\n                <ion-option *ngFor="let item of producTypeObj" [value]="item.PRODUCT_TYPE_ID">{{item.PRODUCT_TYPE_NAME}}</ion-option>\n              </ion-select>\n            </ion-item>\n\n            \n            <ion-item>\n                <ion-label>เบอร์ยาเส้น</ion-label>\n                <ion-select [disabled]="!isGetData" (ionChange)="onProductSizeChange($event)" [(ngModel)]="productSizeSel" placeholder="เลือกเบอร์ยาเส้น">\n                  <ion-option *ngFor="let item of producSizeObj" [value]="item.PRODUCT_SIZE_ID">{{item.PRODUCT_SIZE_NAME}}</ion-option>\n                </ion-select>\n             \n              </ion-item>\n\n              <ion-item >\n                  <ion-label>จำนวนถุง</ion-label>\n                  <ion-input class="input-text-alight-right" type="number" placeholder="0" value="0"></ion-input>\n                </ion-item>\n\n                <ion-item >\n                  <ion-label>น้ำหนัก/กิโลกรัม</ion-label>\n                  <ion-input class="input-text-alight-right" type="text" [disabled]="true" placeholder="0" value="0">0</ion-input>\n                </ion-item>\n                <ion-item >\n                  <ion-label>ราคา/ถุง</ion-label>\n                  <ion-input class="input-text-alight-right" type="text" [disabled]="true" value="0">0</ion-input>\n                </ion-item>\n\n          \n          </ion-list>\n          </ion-card-content>\n        \n        </ion-card>\n\n      </ion-col>\n      <ion-col col-6>\n        \n        <ion-card>\n\n          <ion-card-header>\n            รายการซื้อ\n          </ion-card-header>\n        \n          <ion-card-content>\n            <!-- Add card content here! -->\n          </ion-card-content>\n        \n        </ion-card>\n\n      </ion-col>\n    </ion-row>\n   \n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order-add-material/create-order-add-material.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _d || Object])
     ], CreateOrderAddMaterialPage);
     return CreateOrderAddMaterialPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=create-order-add-material.js.map
@@ -381,7 +413,7 @@ var ReportPage = (function () {
     };
     ReportPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-report',template:/*ion-inline-start:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/report/report.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      report\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page1">\n  <div>ssdfsdsf</div>\n  <div>\n  <ion-list id="report-list4">\n    <ion-item id="report-list-item-container3">\n      <div id="report-markdown8" class="show-list-numbers-and-dots">\n        <p style="margin-top:0px;color:#000000;">\n          we\n        </p>\n      </div>\n    </ion-item>\n    <ion-list id="report-list5">\n      <ion-item color="none" on-click="ssss()" id="report-list-item16">\n        Item 1\n      </ion-item>\n      <ion-item color="none" id="report-list-item17">\n        Item 2\n      </ion-item>\n      <ion-item color="none" id="report-list-item18">\n        Item 3\n      </ion-item>\n    </ion-list>\n  </ion-list>\n</div>\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/report/report.html"*/
+            selector: 'page-report',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/report/report.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      report\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page1">\n  <div>ssdfsdsf</div>\n  <div>\n  <ion-list id="report-list4">\n    <ion-item id="report-list-item-container3">\n      <div id="report-markdown8" class="show-list-numbers-and-dots">\n        <p style="margin-top:0px;color:#000000;">\n          we\n        </p>\n      </div>\n    </ion-item>\n    <ion-list id="report-list5">\n      <ion-item color="none" on-click="ssss()" id="report-list-item16">\n        Item 1\n      </ion-item>\n      <ion-item color="none" id="report-list-item17">\n        Item 2\n      </ion-item>\n      <ion-item color="none" id="report-list-item18">\n        Item 3\n      </ion-item>\n    </ion-list>\n  </ion-list>\n</div>\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/report/report.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]])
     ], ReportPage);
@@ -416,7 +448,7 @@ var ListPage = (function () {
     }
     ListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-list',template:/*ion-inline-start:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      List\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page2"></ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/list/list.html"*/
+            selector: 'page-list',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      List\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page2"></ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/list/list.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
     ], ListPage);
@@ -451,7 +483,7 @@ var SettingsPage = (function () {
     }
     SettingsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-settings',template:/*ion-inline-start:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/settings/settings.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      settings\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page5"></ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/settings/settings.html"*/
+            selector: 'page-settings',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/settings/settings.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      settings\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page5"></ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/settings/settings.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
     ], SettingsPage);
@@ -508,7 +540,7 @@ var LoginPage = (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/login/login.html"*/'\n\n\n<ion-content padding style=" padding-left: 100px !important;" id="page4" class="main-bg-color">\n \n <div class="login-container"> \n  <h1 id="login-heading1" class="font-base" >\n    ระบบบริหารจัดการรับซื้อสินค้าเกษตร\n  </h1>\n  <form  [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">\n    <ion-item  style="background-color: transparent;" id="login-input3" [ngClass]="{\'error-border\':!authForm.controls.username.valid && authForm.controls.username.touched}">\n      <!-- <ion-label  floating>Enter your Username</ion-label> -->\n      <ion-input class="input-clear-style" type="text"  formControlName="username" placeholder="Enter your Username"></ion-input>\n    </ion-item>\n    <ion-item style="background-color: transparent;" [ngClass]="{\'error-border\':!authForm.controls.password.valid && authForm.controls.password.touched}">\n     <!-- <ion-label floating>Password</ion-label> -->\n      <ion-input type="password"  class="input-clear-style" formControlName="password" placeholder="Password"></ion-input>\n    </ion-item>\n    <div style="margin-top:20px;">\n      <button class="submit-login"   ion-button round outline color="light"   [disabled]="!authForm.valid"  type="submit">log in</button>  \n    </div>\n  </form>\n\n  <div id="login-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">\n    <p style="color:#FFFFFF;">\n      Forgot Password?\n    </p>\n  </div>\n </div>\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/login/login.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/login/login.html"*/'\n\n\n<ion-content padding style=" padding-left: 100px !important;" id="page4" class="main-bg-color">\n \n <div class="login-container"> \n  <h1 id="login-heading1" class="font-base" >\n    ระบบบริหารจัดการรับซื้อสินค้าเกษตร\n  </h1>\n  <form  [formGroup]="authForm" (ngSubmit)="onSubmit(authForm.value)">\n    <ion-item  style="background-color: transparent;" id="login-input3" [ngClass]="{\'error-border\':!authForm.controls.username.valid && authForm.controls.username.touched}">\n      <!-- <ion-label  floating>Enter your Username</ion-label> -->\n      <ion-input class="input-clear-style" type="text"  formControlName="username" placeholder="Enter your Username"></ion-input>\n    </ion-item>\n    <ion-item style="background-color: transparent;" [ngClass]="{\'error-border\':!authForm.controls.password.valid && authForm.controls.password.touched}">\n     <!-- <ion-label floating>Password</ion-label> -->\n      <ion-input type="password"  class="input-clear-style" formControlName="password" placeholder="Password"></ion-input>\n    </ion-item>\n    <div style="margin-top:20px;">\n      <button class="submit-login"   ion-button round outline color="light"   [disabled]="!authForm.valid"  type="submit">log in</button>  \n    </div>\n  </form>\n\n  <div id="login-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">\n    <p style="color:#FFFFFF;">\n      Forgot Password?\n    </p>\n  </div>\n </div>\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/login/login.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]])
     ], LoginPage);
@@ -669,7 +701,7 @@ var Step3Page = (function () {
     };
     Step3Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-step3',template:/*ion-inline-start:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/step3/step3.html"*/'<!--\n  Generated template for the Step3Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step3efef</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/step3/step3.html"*/,
+            selector: 'page-step3',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/step3/step3.html"*/'<!--\n  Generated template for the Step3Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>step3efef</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/step3/step3.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], Step3Page);
@@ -765,7 +797,7 @@ var MyApp = (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
     ], MyApp.prototype, "navCtrl", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/app/app.html"*/'<ion-split-pane>\n  <ion-menu ng-hide="true" type="push" [content]="mainContent">\n\n    <ion-content class="main-bg-color" id="side-menu21">\n      <ion-card text-center class="hide-card">\n        <img src="assets/imgs/avatar/default.png" class="custom-avatar" />\n        <h1>Name</h1>\n        <h2>Have some p tag here</h2>\n      </ion-card>\n\n      <ion-list id="menu-list1">\n\n\n        <ion-item color="white" menuClose="" on-click="goToCreateOrder()" id="menu-list-item1">\n          <ion-icon name="barcode" item-left></ion-icon>\n          ทำรายการรับซื้อ\n        </ion-item>\n\n        <ion-item color="white" menuClose="" on-click="goToReport()" id="menu-list-item1">\n          <ion-icon name="barcode" item-left></ion-icon>\n          รายงานประจำวัน\n        </ion-item>\n        <!-- <ion-item color="none" menuClose="" on-click="goToList()" id="menu-list-item2">\n          <ion-icon name="ionic" item-left></ion-icon>\n          รายชื่อคนกลาง\n        </ion-item> -->\n        <ion-item color="none" menuClose="" on-click="goToPage3()" id="menu-list-item3">\n          <ion-icon name="ionic" item-left></ion-icon>\n          นโยบาย และข้อตกลงในการรับซื้อ\n        </ion-item>\n        <ion-item color="none" menuClose="" on-click="goToSettings()" id="menu-list-item20">\n          <ion-icon name="settings" item-left></ion-icon>\n          ตั้งค่า\n        </ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-nav main #mainContent [root]="rootPage"></ion-nav>\n\n</ion-split-pane>'/*ion-inline-end:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/app/app.html"*/'<ion-split-pane>\n  <ion-menu ng-hide="true" type="push" [content]="mainContent">\n\n    <ion-content class="main-bg-color" id="side-menu21">\n      <ion-card text-center class="hide-card">\n        <img src="assets/imgs/avatar/default.png" class="custom-avatar" />\n        <h1>Name</h1>\n        <h2>Have some p tag here</h2>\n      </ion-card>\n\n      <ion-list id="menu-list1">\n\n\n        <ion-item color="white" menuClose="" on-click="goToCreateOrder()" id="menu-list-item1">\n          <ion-icon name="barcode" item-left></ion-icon>\n          ทำรายการรับซื้อ\n        </ion-item>\n\n        <ion-item color="white" menuClose="" on-click="goToReport()" id="menu-list-item1">\n          <ion-icon name="barcode" item-left></ion-icon>\n          รายงานประจำวัน\n        </ion-item>\n        <!-- <ion-item color="none" menuClose="" on-click="goToList()" id="menu-list-item2">\n          <ion-icon name="ionic" item-left></ion-icon>\n          รายชื่อคนกลาง\n        </ion-item> -->\n        <ion-item color="none" menuClose="" on-click="goToPage3()" id="menu-list-item3">\n          <ion-icon name="ionic" item-left></ion-icon>\n          นโยบาย และข้อตกลงในการรับซื้อ\n        </ion-item>\n        <ion-item color="none" menuClose="" on-click="goToSettings()" id="menu-list-item20">\n          <ion-icon name="settings" item-left></ion-icon>\n          ตั้งค่า\n        </ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-nav main #mainContent [root]="rootPage"></ion-nav>\n\n</ion-split-pane>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]])
     ], MyApp);
@@ -879,7 +911,7 @@ var CreateOrderPage = (function () {
     };
     CreateOrderPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-create-order',template:/*ion-inline-start:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/create-order/create-order.html"*/'<!--\n  Generated template for the CreateOderPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ทำรายการรับซื้อ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="test" padding>\n\n\n  <ion-card class="card-container hide-card ">\n\n    <ion-card-content style="text-align: center;">\n\n      <div [ngSwitch]="scanStatus">\n        <ion-grid *ngSwitchCase="\'hide\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="add-circle-outline" on-click="callQrScanner()"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n\n\n              <p class="add-new-text">\n                กดเพื่อเริ่มทำรายการใหม่\n              </p>\n\n\n\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n        <ion-grid *ngSwitchCase="\'show\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="qr-scanner-outline"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n              <p class="add-new-text" on-click="hideCamera()">\n                ยกเลิก\n              </p>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </div>\n\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/ionic802/buy-material_restore/src/pages/create-order/create-order.html"*/,
+            selector: 'page-create-order',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order/create-order.html"*/'<!--\n  Generated template for the CreateOderPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ทำรายการรับซื้อ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="test" padding>\n\n\n  <ion-card class="card-container hide-card ">\n\n    <ion-card-content style="text-align: center;">\n\n      <div [ngSwitch]="scanStatus">\n        <ion-grid *ngSwitchCase="\'hide\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="add-circle-outline" on-click="callQrScanner()"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n\n\n              <p class="add-new-text">\n                กดเพื่อเริ่มทำรายการใหม่\n              </p>\n\n\n\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n        <ion-grid *ngSwitchCase="\'show\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="qr-scanner-outline"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n              <p class="add-new-text" on-click="hideCamera()">\n                ยกเลิก\n              </p>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </div>\n\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order/create-order.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_qr_scanner__["a" /* QRScanner */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */]])
@@ -1034,6 +1066,7 @@ var RestProvider = (function () {
     RestProvider.prototype.getService = function (obj) {
         var _this = this;
         var url = this.apiUrl + "/bms_dev/api/" + obj.serviceName + "/" + obj.getvalue;
+        console.log("url call = " + url);
         return new Promise(function (resolve, reject) {
             if (!_this.isCore) {
                 _this.httpClient.get(url, { responseType: 'json' }).subscribe(function (data) {
@@ -1063,10 +1096,9 @@ var RestProvider = (function () {
     };
     RestProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_http__["a" /* HTTP */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_http__["a" /* HTTP */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* LoadingController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_native_http__["a" /* HTTP */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* LoadingController */]])
     ], RestProvider);
     return RestProvider;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=rest.js.map
