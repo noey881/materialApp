@@ -15,6 +15,8 @@ import { CreateOrderPageModule } from '../pages/create-order/create-order.module
 import { RestProvider } from '../providers/rest/rest';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP } from '@ionic-native/http';
+
+import { DecimalPipe } from '@angular/common';
 @NgModule({
   declarations: [
     MyApp,
@@ -53,7 +55,8 @@ import { HTTP } from '@ionic-native/http';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
-    HTTP
+    HTTP,
+    DecimalPipe
    // AuthenticaitonProvider
 
   ]

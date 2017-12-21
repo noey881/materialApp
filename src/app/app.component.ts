@@ -35,6 +35,10 @@ export class MyApp {
       splashScreen.hide();
 
     });
+
+
+
+
  
   }
   shouldShow(){

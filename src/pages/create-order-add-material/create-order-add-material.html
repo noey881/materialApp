@@ -45,18 +45,27 @@
 
               <ion-item >
                   <ion-label>จำนวนถุง</ion-label>
-                  <ion-input class="input-text-alight-right" type="number" placeholder="0" value="0"></ion-input>
+                  <ion-input class="input-text-alight-right" (keyup)="onQtyChange()" type="number" pattern="[0-9]*" [(ngModel)]="qty" placeholder="0"></ion-input>
                 </ion-item>
 
                 <ion-item >
                   <ion-label>น้ำหนัก/กิโลกรัม</ion-label>
-                  <ion-input class="input-text-alight-right" type="text" [disabled]="true" placeholder="0" value="0">0</ion-input>
+                  <ion-input class="input-text-alight-right" [(ngModel)]="weight" type="text" [disabled]="true" placeholder="0" value="0">0</ion-input>
                 </ion-item>
                 <ion-item >
                   <ion-label>ราคา/ถุง</ion-label>
-                  <ion-input class="input-text-alight-right" type="text" [disabled]="true" value="0">0</ion-input>
+                  <ion-input class="input-text-alight-right" [(ngModel)]="price" type="text" [disabled]="true" value="0">0</ion-input>
                 </ion-item>
 
+                <ion-row justify-content-center>
+                  <!-- <ion-col col-6>
+                      <button ion-button block color="light">ยกเลิกการทำรายการ</button>
+                  </ion-col> -->
+                  <ion-col col-6>
+                      <button ion-button block on-click="addItem()">เพิ่มรายการ</button>
+                  </ion-col>
+                </ion-row> 
+      
           
           </ion-list>
           </ion-card-content>
