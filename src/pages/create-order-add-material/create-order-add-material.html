@@ -62,9 +62,13 @@
                       <button ion-button block color="light">ยกเลิกการทำรายการ</button>
                   </ion-col> -->
                   <ion-col col-6>
-                      <button ion-button block on-click="addItem()">เพิ่มรายการ</button>
+                      <button  *ngIf="!isEdit"  ion-button block [disabled]="!canAdd" on-click="addItem()">เพิ่มรายการ</button>
+                      <button  *ngIf="isEdit" ion-button block [disabled]="!canAdd" on-click="editItem()">แก้ไขรายการ</button>
                   </ion-col>
+
+                  
                 </ion-row> 
+
       
           
           </ion-list>
@@ -78,17 +82,59 @@
         <ion-card>
 
           <ion-card-header>
-            รายการซื้อ
+            รายการซื้อ {{displayUserData.fullname}}
           </ion-card-header>
         
           <ion-card-content>
-            <!-- Add card content here! -->
+            
+            <ion-list  *ngFor="let item of arrayAdded; index as i;" >
+              <ion-item-sliding>
+                <ion-item  >
+                  <h2>{{getProductTypeName(item.productType)}}</h2>
+                  <h3>{{getProductSizeName(item.productSize)}}</h3>
+
+                  <p item-end style="text-align:right;">{{item.weight}} กิโลกรัม<br>{{item.qty}} ถุง<br>{{item.price}} บาท</p>
+   
+                
+                </ion-item>
+       
+                <ion-item-options side="right">
+
+                    <button  ion-button on-click="editList(i)" color="info">
+                        <ion-icon name="ios-build-outline"></ion-icon>
+                      </button>
+                  <button   ion-button on-click="removeList(i)" color="danger">
+                    <ion-icon name="ios-remove-circle-outline"></ion-icon>
+                  </button>
+          
+                </ion-item-options>
+              </ion-item-sliding>
+            </ion-list>
+
+
           </ion-card-content>
+
+
+          <ion-item>
+              <span item-left>จำนวนรวม : {{sumWeight}} <br> จำนวนถุงรวม : {{sumQty}}</span>
+              <span  item-end>
+                ราคารวม : {{sumPrice}}
+              </span>
+            </ion-item>
+
         
         </ion-card>
 
       </ion-col>
     </ion-row>
+
+    <ion-row>
+        <ion-col col-12>
+            <button  ion-button block on-click="showPrompt()">เสร็จสิ้นการทำรายการ</button>
+           
+        </ion-col>
+    </ion-row>
+    
    
   </ion-grid>
 

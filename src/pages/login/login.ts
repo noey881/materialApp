@@ -4,6 +4,7 @@ import { NavController, MenuController} from 'ionic-angular';
 import { CreateOrderPage } from '../create-order/create-order';
 // import { AuthenticaitonProvider } from '../../providers/authenticaiton/authenticaiton';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { RestProvider } from '../../providers/rest/rest';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -13,7 +14,8 @@ username: AbstractControl;
 password: AbstractControl;  
 authForm: FormGroup;   
      
-  constructor(public navCtrl: NavController, public formBuilder:FormBuilder, public menuCtrl: MenuController) {
+  constructor(public navCtrl: NavController, public formBuilder:FormBuilder, public menuCtrl: MenuController,
+    private restProvider: RestProvider) {
  
     // this.username = this.authForm.controls['username'];     
     // this.password = this.authForm.controls['password'];    
@@ -29,6 +31,10 @@ this.authForm = formBuilder.group({
     
      
         if(this.authForm.valid) {
+
+
+          
+
 
                  console.log("submit")
             this.navCtrl.setRoot(CreateOrderPage);

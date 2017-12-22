@@ -76,4 +76,41 @@ export class RestProvider {
   }
 
 
+  public postService(obj){
+
+    let url = this.apiUrl+"/bms_dev/api/" + obj.serviceName;
+    let params = obj.params;
+    console.log("url call = "+url);
+    return new Promise((resolve,reject) => {
+      if(!this.isCore){
+        this.httpClient.post(url, params).subscribe(data => {
+          console.log("callsuccess")
+          console.log(data)
+          resolve(data);
+        }, err => {
+          console.log("error=");
+          console.log(err);
+        });
+      }else{
+      
+      
+        this.http.setRequestTimeout(this.timeout);
+        this.http.setDataSerializer('json');
+       this.http.setHeader('Content-Type', 'application/json');
+        this.http.post(url, params,  {})
+        .then(data => {
+          console.log(data.data)
+          resolve(JSON.parse(data.data));
+        })
+        .catch(error => {
+          console.log(error.status);
+          console.log(error.error); // error message as string
+          console.log(error.headers);
+          reject(error);
+        });
+      }
+    });
+  }
+
+
 }

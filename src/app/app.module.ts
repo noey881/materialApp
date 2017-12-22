@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, AlertController } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { ReportPage } from '../pages/report/report';
 import { ListPage } from '../pages/list/list';
@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP } from '@ionic-native/http';
 
 import { DecimalPipe } from '@angular/common';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -56,7 +57,8 @@ import { DecimalPipe } from '@angular/common';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
     HTTP,
-    DecimalPipe
+    DecimalPipe,
+    AlertController
    // AuthenticaitonProvider
 
   ]
