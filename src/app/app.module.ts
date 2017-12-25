@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP } from '@ionic-native/http';
 
 import { DecimalPipe } from '@angular/common';
-
+import { AllOrderPageModule } from '../pages/all-order/all-order.module';
 @NgModule({
   declarations: [
     MyApp,
@@ -32,6 +32,7 @@ import { DecimalPipe } from '@angular/common';
     Step3PageModule,
     CreateOrderPageModule,
     HttpClientModule,
+    AllOrderPageModule,
 
     IonicModule.forRoot(MyApp,{
       backButtonText: 'ย้อนกลับ',

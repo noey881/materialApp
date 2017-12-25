@@ -86,7 +86,7 @@
     },
     "is_top_level": true,
     "variables": {
-      "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+      "GEOLOCATION_USAGE_DESCRIPTION": "my_project would like to use your location"
     }
   }
 }

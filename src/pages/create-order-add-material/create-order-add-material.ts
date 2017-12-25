@@ -3,7 +3,7 @@ import { NavController, NavParams, LoadingController,AlertController } from 'ion
 import { DecimalPipe } from '@angular/common';
 import { RestProvider } from '../../providers/rest/rest';
 import { Geolocation } from '@ionic-native/geolocation';
-
+import { AllOrderPage } from '../all-order/all-order';
 /**
  * Generated class for the CreateOrderAddMaterialPage page.
  *
@@ -337,6 +337,10 @@ export class CreateOrderAddMaterialPage {
 
     let tmpArray = [];
 
+    let userid = this.restProvider.getUserData();
+    console.log(userid)
+    console.log("userID===",userid.USER_ID)
+
     this.arrayAdded.forEach(item => {
 
       let newvalue = {
@@ -355,7 +359,7 @@ export class CreateOrderAddMaterialPage {
     let obj = {
       "serviceName": "receive_new_order",
         "params":{
-            "iBuyerID":1,
+            "iBuyerID":userid.USER_ID,
             "iFarmerID":this.userData['data']['USER_ID'],
             "iItemQty":this.sumQty,
             "iNetOrderPrice": parseFloat(this.sumPrice.replace(/,/g,'')),
@@ -369,10 +373,19 @@ export class CreateOrderAddMaterialPage {
   
   console.log(obj);
 
+  this.loader = this.loadingCtrl.create({
+    content: 'Please wait...',
+    duration: 30000,
+    dismissOnPageChange: false
+  });
+
+  this.loader.present()
+
     this.restProvider.postService(obj).then(data => {
       console.log(data)
-
-  
+      this.loader.dismiss();
+      this.navCtrl.setRoot(AllOrderPage);
+      
 
     });
     

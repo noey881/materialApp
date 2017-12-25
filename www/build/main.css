@@ -4263,7 +4263,7 @@ ion-alert input {
 .alert-ios .alert-message,
 .alert-ios .alert-input-group {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: inherit;
   padding: 0 16px 21px;
 }
@@ -4459,7 +4459,7 @@ ion-alert input {
 
 .alert-md .alert-message {
   max-height: 240px;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .alert-md .alert-message:empty {

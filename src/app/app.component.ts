@@ -12,6 +12,9 @@ import { Step3Page } from '../pages/step3/step3';
 
 import { CreateOrderPage } from '../pages/create-order/create-order';
 
+import { RestProvider } from '../providers/rest/rest';
+
+import { AllOrderPage } from '../pages/all-order/all-order';
 import { LoginPage } from '../pages/login/login';
 
 
@@ -22,8 +25,9 @@ import { LoginPage } from '../pages/login/login';
 export class MyApp {
   @ViewChild(Nav) navCtrl: Nav;
     rootPage:any = LoginPage;//CreateOrderPage;//LoginPage;
-
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController) {
+public userName;
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController
+              , private restProvider:RestProvider) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -38,8 +42,6 @@ export class MyApp {
 
 
 
-
- 
   }
   shouldShow(){
     return true;
@@ -48,10 +50,15 @@ export class MyApp {
     return false;
   }
 
+  
 
   goToCreateOrder(params){
     if (!params) params = {};
     this.navCtrl.setRoot(CreateOrderPage);
+  }
+
+  goToAllOrder(){
+    this.navCtrl.setRoot(AllOrderPage);
   }
 
   goToReport(params){

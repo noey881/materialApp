@@ -61,7 +61,7 @@
       "cordova-plugin-qrscanner": {},
       "cordova-plugin-advanced-http": {},
       "cordova-plugin-geolocation": {
-        "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+        "GEOLOCATION_USAGE_DESCRIPTION": "my_project would like to use your location"
       }
     },
     "platforms": [

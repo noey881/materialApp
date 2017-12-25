@@ -15,6 +15,8 @@ export class RestProvider {
   private result:object;
   private loader;
   private timeout = 45;
+
+  private userData;
   //private apiUrl:string = "https://digiday.co.th";
   private apiUrl:string = "http://localhost:8100"
   constructor(public http: HTTP, platform:Platform, private httpClient:HttpClient, public loadingCtrl: LoadingController) {
@@ -90,6 +92,7 @@ export class RestProvider {
         }, err => {
           console.log("error=");
           console.log(err);
+          reject(err);
         });
       }else{
       
@@ -110,6 +113,14 @@ export class RestProvider {
         });
       }
     });
+  }
+
+  public setUserData(userData){
+      this.userData = userData;
+  }
+
+  public getUserData(){
+    return this.userData;
   }
 
 
