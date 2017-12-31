@@ -44,6 +44,8 @@ export class CreateOrderAddMaterialPage {
   public sumWeight;
   public sumQty;
 
+  private geolocationData;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private restProvider: RestProvider, public loadingCtrl: LoadingController,
     private decimalPipe: DecimalPipe,
@@ -156,20 +158,6 @@ export class CreateOrderAddMaterialPage {
     });
   }
 
-
-
-  getPosition() {
-    console.log("getcurrentposition")
-
-    this.geolocation.getCurrentPosition().then((resp) => {
-
-      console.log(resp)
-      //   // resp.coords.latitude
-      //   // resp.coords.longitude
-    }).catch((error) => {
-      //   console.log('Error getting location', error);
-    });
-  }
 
 
 
@@ -321,20 +309,6 @@ export class CreateOrderAddMaterialPage {
 
   public submitList(){
 //receive_new_order
-
-    // {
-
-    //   "iBuyerID":10,
-    //   "iFarmerID":1,
-    //   "iItemQty":10,
-    //   "iNetOrderPrice":1000,
-    //   "sLocation_LAT":100.1,
-    //   "sLocation_LNG": 100.2,
-    //   "aData_ItemOrder":{
-        
-    //     "aaa":1
-    //   }
-
     let tmpArray = [];
 
     let userid = this.restProvider.getUserData();
@@ -356,6 +330,10 @@ export class CreateOrderAddMaterialPage {
       tmpArray.push(newvalue);
     });
 
+
+    //this.geolocationData = resp;
+      // resp.coords.latitude
+
     let obj = {
       "serviceName": "receive_new_order",
         "params":{
@@ -363,14 +341,17 @@ export class CreateOrderAddMaterialPage {
             "iFarmerID":this.userData['data']['USER_ID'],
             "iItemQty":this.sumQty,
             "iNetOrderPrice": parseFloat(this.sumPrice.replace(/,/g,'')),
-            "sLocation_LAT":100.1,
-            "sLocation_LNG": 100.2,
+            "sLocation_LAT":this.geolocationData.coords.latitude || 0,
+            "sLocation_LNG": this.geolocationData.coords.longitude || 0,
+            "sLocation_ACCURACY":this.geolocationData.coords.accuracy|| 0,
+            "sLocation_ALTITUDE":this.geolocationData.coords.altitude|| 0,
+            "sLocation_HEADING":this.geolocationData.coords.heading|| 0,
+            "sLocation_SPEED":this.geolocationData.coords.speed|| 0,
+            "sLocation_ALTACC":this.geolocationData.coords.altitudeAccuracy|| 0,
             "aData_ItemOrder": tmpArray
-      
         }
-      
     };
-  
+  console.log("senddata ----------------------------")
   console.log(obj);
 
   this.loader = this.loadingCtrl.create({
@@ -379,7 +360,7 @@ export class CreateOrderAddMaterialPage {
     dismissOnPageChange: false
   });
 
-  this.loader.present()
+  this.loader.present();
 
     this.restProvider.postService(obj).then(data => {
       console.log(data)
@@ -391,6 +372,23 @@ export class CreateOrderAddMaterialPage {
     
   }
 
+
+  private getLocation(){
+
+    console.log("callgeo----------")
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.geolocationData = resp;
+      // resp.coords.latitude
+      this.submitList()
+      console.log("----------------")
+     console.log(JSON.stringify(resp));
+      // resp.coords.longitude
+     }).catch((error) => {
+      this.geolocationData = null;
+      this.submitList()
+       console.log('Error getting location', JSON.stringify(error));
+     });
+  }
 
   showPrompt() {
     let prompt = this.alertCtrl.create({
@@ -407,7 +405,8 @@ export class CreateOrderAddMaterialPage {
         {
           text: 'ยืนยัน',
           handler: data => {
-            this.submitList()
+            this.getLocation();
+           
           }
         }
       ]

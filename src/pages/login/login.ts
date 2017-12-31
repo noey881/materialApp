@@ -53,21 +53,12 @@ this.authForm = formBuilder.group({
               this.restProvider.setUserData(data['data']);
               this.navCtrl.setRoot(CreateOrderPage);
             }
-        
-            
-      
           }).catch(error => {
-            
             console.log(error);
             this.showPrompt() 
-      
           });
-
-    
-
-                 console.log("submit")
-        
-
+            console.log("submit")
+      
           //  window.localStorage.setItem('password', value.password);
  
       

@@ -17,6 +17,7 @@ import { RestProvider } from '../providers/rest/rest';
 import { AllOrderPage } from '../pages/all-order/all-order';
 import { LoginPage } from '../pages/login/login';
 
+import { Geolocation } from '@ionic-native/geolocation';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class MyApp {
     rootPage:any = LoginPage;//CreateOrderPage;//LoginPage;
 public userName;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menuCtrl: MenuController
-              , private restProvider:RestProvider) {
+              , private restProvider:RestProvider, private geolocation: Geolocation) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -37,6 +38,21 @@ public userName;
               // set status bar to white
     // statusBar.backgroundColorByHexString('#CCCCCC');
       splashScreen.hide();
+
+      
+
+
+      console.log("callgeo----------")
+      this.geolocation.getCurrentPosition().then((resp) => {
+        // resp.coords.latitude
+
+        console.log("----------------")
+       console.log(JSON.stringify(resp));
+        // resp.coords.longitude
+       }).catch((error) => {
+         console.log('Error getting location', JSON.stringify(error));
+       });
+       
 
     });
 

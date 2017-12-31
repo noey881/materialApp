@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>ประวัติการซื้อขาย</ion-title>
   </ion-navbar>
 
@@ -17,10 +20,53 @@
 
 
     <ion-card>
+        <ion-card-header>
+            ประวัติการซื้อขาย
+          </ion-card-header>
 
+
+        <ion-grid>
+            <ion-row class="header-list">
+              <ion-col >
+                <div>วันที่</div>
+              </ion-col>
+              <ion-col>
+                <div>เลขที่ใบเสร็จ</div>
+              </ion-col>
+              <ion-col>
+                  <div>จำนวน/ถุง</div>
+                </ion-col>
+                <ion-col>
+                  <div>ยอดการซื้อขาย</div>
+                </ion-col>
+            </ion-row>
+
+
+
+<div class='section'>
+            <ion-row *ngFor="let item of orderList; index as i;" >
+                <ion-col>
+                  <div>{{item.ORDER_DATE | date:'dd MMMM yyyy'}} </div>
+                 
+                </ion-col>
+                <ion-col>
+                  <div>{{item.RECEIPT_NO}}</div>
+                </ion-col>
+                <ion-col>
+                    <div>{{item.ITEM_QUANTITY}}</div>
+                  </ion-col>
+                  <ion-col>
+                    <div>{{item.ORDER_NET}}</div>
+                  </ion-col>
+              </ion-row>
+            </div>
+      
+          </ion-grid>
+
+<!-- 
        
                  <iframe width="100%" height="500" frameBorder="0" src="https://digiday.co.th/bms_dev/report_order_fixed"></iframe>
-    
+     -->
       </ion-card>
 
 </ion-content>

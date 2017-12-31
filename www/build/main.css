@@ -28035,6 +28035,18 @@ ion-navbar.toolbar {
   color: white;
 }
 
+page-all-order .header-list {
+  font-weight: bold;
+}
+
+page-all-order div.section ion-row:nth-child(even) {
+  background: Green;
+}
+
+page-all-order div.section ion-row:nth-child(odd) {
+  background: Red;
+}
+
 page-create-order .add-icon {
   font-size: 30vw;
   color: #8ca0be;

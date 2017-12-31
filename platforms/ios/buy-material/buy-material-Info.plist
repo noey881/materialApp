@@ -47,6 +47,8 @@
     <string>The camera is used to scan QR codes.</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>location used</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>used geolocation here</string>
     <key>NSMainNibFile~ipad</key>
     <string/>
     <key>UIBackgroundModes</key>

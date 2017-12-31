@@ -7,6 +7,9 @@
 <ion-header>
 
   <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
     <ion-title>สร้างรายการจัดซื้อ</ion-title>
   </ion-navbar>
 
@@ -130,7 +133,7 @@
 
     <ion-row>
         <ion-col col-12>
-            <button  ion-button block on-click="showPrompt()">เสร็จสิ้นการทำรายการ</button>
+            <button  ion-button block [disabled]="arrayAdded.length == 0" on-click="showPrompt()">เสร็จสิ้นการทำรายการ</button>
            
         </ion-col>
     </ion-row>

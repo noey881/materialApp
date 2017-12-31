@@ -1,3 +1,17 @@
 page-all-order {
 
+    .header-list {
+        font-weight: bold;
+    }
+        
+    div.section ion-row:nth-child(even)
+    {
+        background: Green;
+    }
+    div.section ion-row:nth-child(odd)
+    {
+        background: Red;
+    }
+        
+
 }

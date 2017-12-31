@@ -1,4 +1,4 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler,LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler, AlertController } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -16,8 +16,14 @@ import { RestProvider } from '../providers/rest/rest';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP } from '@ionic-native/http';
 
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, registerLocaleData } from '@angular/common';
+
 import { AllOrderPageModule } from '../pages/all-order/all-order.module';
+import { Geolocation } from '@ionic-native/geolocation';
+
+
+import localeTh from '@angular/common/locales/th';
+registerLocaleData(localeTh, 'th');
 @NgModule({
   declarations: [
     MyApp,
@@ -53,13 +59,17 @@ import { AllOrderPageModule } from '../pages/all-order/all-order.module';
     SettingsPage
   ],
   providers: [
+    {provide: LOCALE_ID,
+    useValue: 'th-TH'},
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
     HTTP,
     DecimalPipe,
-    AlertController
+    AlertController,
+    Geolocation,
+    
    // AuthenticaitonProvider
 
   ]
