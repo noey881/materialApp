@@ -28040,11 +28040,12 @@ page-all-order .header-list {
 }
 
 page-all-order div.section ion-row:nth-child(even) {
-  background: Green;
+  background: #f2f5f8;
 }
 
-page-all-order div.section ion-row:nth-child(odd) {
-  background: Red;
+page-all-order .section > ion-row {
+  border-bottom: 1px solid #cccccc;
+  padding: 10px;
 }
 
 page-create-order .add-icon {

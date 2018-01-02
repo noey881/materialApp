@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController,ModalController } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
+import { AllOrderDetailPage } from '../all-order-detail/all-order-detail';
 /**
  * Generated class for the AllOrderPage page.
  *
@@ -19,7 +20,7 @@ export class AllOrderPage {
   public orderList;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private restProvider:RestProvider,
-    public loadingCtrl: LoadingController,) {
+    public loadingCtrl: LoadingController,public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
@@ -31,7 +32,11 @@ export class AllOrderPage {
 
 
 
+  showDetail(){
 
+    let modal = this.modalCtrl.create(AllOrderDetailPage);
+    modal.present();
+  }
 
   getAllOrderList(){
 

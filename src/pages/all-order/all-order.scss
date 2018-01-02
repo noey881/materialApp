@@ -6,11 +6,18 @@ page-all-order {
         
     div.section ion-row:nth-child(even)
     {
-        background: Green;
+       
+       // background: rgb(193, 230, 236);
+       background: hsl(210, 30%, 96%);
     }
     div.section ion-row:nth-child(odd)
     {
-        background: Red;
+        //  background: rgb(189, 214, 235);
+    }
+
+    .section > ion-row{
+        border-bottom: 1px solid #cccccc;
+        padding:10px;
     }
         
 

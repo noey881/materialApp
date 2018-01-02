@@ -28,7 +28,7 @@
         <ion-grid>
             <ion-row class="header-list">
               <ion-col >
-                <div>วันที่</div>
+                <div style="text-align: center;">วันที่</div>
               </ion-col>
               <ion-col>
                 <div>เลขที่ใบเสร็จ</div>
@@ -44,7 +44,7 @@
 
 
 <div class='section'>
-            <ion-row *ngFor="let item of orderList; index as i;" >
+            <ion-row *ngFor="let item of orderList; index as i;" on-click="showDetail();" >
                 <ion-col>
                   <div>{{item.ORDER_DATE | date:'dd MMMM yyyy'}} </div>
                  
@@ -52,10 +52,10 @@
                 <ion-col>
                   <div>{{item.RECEIPT_NO}}</div>
                 </ion-col>
-                <ion-col>
+                <ion-col style="text-align: right;">
                     <div>{{item.ITEM_QUANTITY}}</div>
                   </ion-col>
-                  <ion-col>
+                  <ion-col style="text-align: right;">
                     <div>{{item.ORDER_NET}}</div>
                   </ion-col>
               </ion-row>

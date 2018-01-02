@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, MenuController,AlertController} from 'ionic-angular';
+import { NavController, MenuController,AlertController, LoadingController} from 'ionic-angular';
 //import { ReportPage } from '../report/report';
 import { CreateOrderPage } from '../create-order/create-order';
 // import { AuthenticaitonProvider } from '../../providers/authenticaiton/authenticaiton';
@@ -14,10 +14,10 @@ export class LoginPage {
 username: AbstractControl;
 password: AbstractControl;  
 authForm: FormGroup;   
-     
+private loader;     
   constructor(public navCtrl: NavController, public formBuilder:FormBuilder, public menuCtrl: MenuController,
     private restProvider: RestProvider,
-    public alertCtrl: AlertController) {
+    public alertCtrl: AlertController,public loadingCtrl: LoadingController) {
  
     // this.username = this.authForm.controls['username'];     
     // this.password = this.authForm.controls['password'];    
@@ -30,7 +30,13 @@ this.authForm = formBuilder.group({
  }
 
      onSubmit(value: any): void { 
-    
+      this.loader = this.loadingCtrl.create({
+        content: 'กำลังเข้าสู่ระบบ...',
+        duration: 30000,
+        dismissOnPageChange: false
+      });
+  
+      
      
         if(this.authForm.valid) {
 
@@ -45,7 +51,7 @@ this.authForm = formBuilder.group({
           };
 
 
-
+          this.loader.present()
           this.restProvider.postService(obj).then(data => {
             console.log(data['status'])
             if(data['status']){
@@ -53,8 +59,10 @@ this.authForm = formBuilder.group({
               this.restProvider.setUserData(data['data']);
               this.navCtrl.setRoot(CreateOrderPage);
             }
+            this.loader.dismiss();
           }).catch(error => {
             console.log(error);
+            this.loader.dismiss();
             this.showPrompt() 
           });
             console.log("submit")
