@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Platform ,LoadingController} from 'ionic-angular';
+import { Observable } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
 import { HTTP } from '@ionic-native/http';
 
 /*
@@ -15,7 +17,7 @@ export class RestProvider {
   private result:object;
   private loader;
   private timeout = 45;
-
+  private subject = new Subject<any>();
   private userData;
   //private apiUrl:string = "https://digiday.co.th";
   private apiUrl:string = "http://localhost:8100"
@@ -117,11 +119,16 @@ export class RestProvider {
 
   public setUserData(userData){
       this.userData = userData;
+       this.subject.next({ userData: userData });
   }
 
   public getUserData(){
     return this.userData;
+       // return this.subject.asObservable();
   }
 
+  public subUserData(): Observable<any>{
+    return this.subject.asObservable();
+  }
 
 }

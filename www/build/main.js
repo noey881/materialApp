@@ -1,41 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 105:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Page3Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var Page3Page = (function () {
-    function Page3Page(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    Page3Page = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-page3',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/page3/page3.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      นโยบาย\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page3"></ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/page3/page3.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]])
-    ], Page3Page);
-    return Page3Page;
-}());
-
-//# sourceMappingURL=page3.js.map
-
-/***/ }),
-
-/***/ 118:
+/***/ 117:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -48,16 +13,16 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 118;
+webpackEmptyAsyncContext.id = 117;
 
 /***/ }),
 
-/***/ 160:
+/***/ 159:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/all-order/all-order.module": [
-		161
+		160
 	],
 	"../pages/create-order/create-order.module": [
 		164
@@ -77,12 +42,12 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 160;
+webpackAsyncContext.id = 159;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 161:
+/***/ 160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -91,7 +56,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__all_order__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__all_order_detail_all_order_detail__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__all_order_detail_all_order_detail__ = __webpack_require__(163);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -126,6 +91,92 @@ var AllOrderPageModule = (function () {
 
 /***/ }),
 
+/***/ 163:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllOrderDetailPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(30);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the AllOrderDetailPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AllOrderDetailPage = (function () {
+    function AllOrderDetailPage(navCtrl, navParams, restProvider, loadingCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.restProvider = restProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.userDisplay = [];
+    }
+    AllOrderDetailPage.prototype.ionViewDidLoad = function () {
+        this.orderDetailId = this.navParams.get('id');
+        this.userDisplay = this.navParams.get('id');
+        this.getFromPage = this.navParams.get('fromPage');
+        this.summaryResult = this.navParams.get('tmpId');
+        if (this.getFromPage == "addMaterial") {
+        }
+        console.log(" this.getFromPage=" + this.getFromPage);
+        console.log(" this.getFromPage=" + this.summaryResult);
+        console.log('ionViewDidLoad AllOrderDetailPage id=' + JSON.stringify(this.orderDetailId));
+        this.getOrderDetail();
+    };
+    AllOrderDetailPage.prototype.getOrderDetail = function () {
+        var _this = this;
+        this.loader = this.loadingCtrl.create({
+            content: 'Please wait...',
+            duration: 30000,
+            dismissOnPageChange: false
+        });
+        this.loader.present();
+        var obj = {
+            "serviceName": "view_item_order",
+            "getvalue": this.orderDetailId.ORDER_ID
+        };
+        this.restProvider.getService(obj).then(function (data) {
+            if (data["status"]) {
+                console.log(data);
+                _this.orderDetailData = data['data'];
+            }
+            else {
+            }
+            _this.loader.dismiss();
+        }).catch(function (error) {
+            _this.loader.dismiss();
+            console.log("thisis");
+            console.log(error);
+        });
+    };
+    AllOrderDetailPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-all-order-detail',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order-detail/all-order-detail.html"*/'<!--\n  Generated template for the AllOrderDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>ประวัติการซื้อขาย</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card padding>\n  \n    <div class="header-detail">\n      <div>\n        <h2>เลขที่ใบเสร็จ : {{userDisplay.RECEIPT_NO}}</h2>\n\n      </div>\n\n      <div>\n        <h2>ชื่อ - นามสกุล : {{userDisplay.FIRSTNAME}} {{userDisplay.LASTNAME}}</h2>\n      </div>\n      <div>\n        <h2>วัน - เวลาที่ซื้อ : {{userDisplay.ORDER_DATE | date:\'dd MMMM yyyy\'}} {{userDisplay.ORDER_TIME}}</h2>\n      </div>\n  </div>\n\n  <div class="break-section"></div>\n\n\n\n  <ion-row class="header-list">\n      <ion-col col-1 style="text-align: center;">\n        <div>ลำดับ</div>\n      </ion-col>\n      <ion-col col-3 style="text-align: center;">\n        <div>ประเภทสินค้า</div>\n      </ion-col>\n      <ion-col col-2 style="text-align: center;">\n        <div>ชนิดสินค้า</div>\n      </ion-col>\n      <ion-col col-2 style="text-align: center;">\n        <div>จำนวนที่ซื้อ</div>\n      </ion-col>\n      <ion-col col-2 style="text-align: center;">\n        <div>ราคาต่อชิ้น</div>\n      </ion-col>\n      <ion-col col-2 style="text-align: center;">\n          <div>ราคารวม</div>\n        </ion-col>\n    </ion-row>\n\n\n\n    <div class=\'section\'>\n      <ion-row *ngFor="let item of orderDetailData; index as i;">\n\n        <ion-col col-1 class="border-right" style="text-align: center;">\n          <div>{{i+1}}</div>\n        </ion-col>\n\n        <ion-col col-3 class="border-right"  style="text-align: center;">\n          <div>{{item.PRODUCT_TYPE_NAME}}</div>\n        </ion-col>\n\n        <ion-col class="border-right"  style="text-align: center;" col-2>\n          <div>{{item.PRODUCT_SIZE_NAME}}</div>\n        </ion-col>\n\n        <ion-col class="border-right"  style="text-align: right;" col-2>\n          <div>{{item.ITEM_QTY}}</div>\n        </ion-col>\n\n        <ion-col class="border-right"  style="text-align: right;" col-2>\n          <div>{{item.PRICE_PER_ITEM}}</div>\n        </ion-col>\n        <ion-col style="text-align: right;" col-2>\n            <div>{{item.ITEM_AMNT | number:\'3.2-5\'}}</div>\n          </ion-col>\n  \n      </ion-row>\n\n\n      <ion-row>\n\n          <ion-col class="border-right"  style="text-align: right;" col-10>\n              <div>รวมทั้งสิ้น</div>\n            </ion-col>\n            <ion-col style="text-align: right;" col-2>\n                <div>{{userDisplay.ORDER_NET}}</div>\n              </ion-col>\n      </ion-row>\n    </div>\n\n\n\n  </ion-card> \n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order-detail/all-order-detail.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _d || Object])
+    ], AllOrderDetailPage);
+    return AllOrderDetailPage;
+    var _a, _b, _c, _d;
+}());
+
+//# sourceMappingURL=all-order-detail.js.map
+
+/***/ }),
+
 /***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -139,7 +190,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__create_order_scan_result_create_order_scan_result__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__create_order_add_material_create_order_add_material__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_create_order_add_material_create_order_add_material__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_create_order_add_material_create_order_add_material__ = __webpack_require__(274);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -192,7 +243,7 @@ var CreateOrderPageModule = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateOrderScanResultPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create_order_add_material_create_order_add_material__ = __webpack_require__(167);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -267,7 +318,7 @@ var CreateOrderScanResultPage = (function () {
             else {
                 _this.querySataus = true;
                 _this.resultData = {
-                    "name": name,
+                    "name": fullname,
                     "userType": userType,
                     "address": address
                 };
@@ -309,10 +360,10 @@ var CreateOrderScanResultPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateOrderAddMaterialPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__all_order_all_order__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__all_order_detail_all_order_detail__ = __webpack_require__(163);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -588,7 +639,8 @@ var CreateOrderAddMaterialPage = (function () {
         this.restProvider.postService(obj).then(function (data) {
             console.log(data);
             _this.loader.dismiss();
-            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__all_order_all_order__["a" /* AllOrderPage */]);
+            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__all_order_detail_all_order_detail__["a" /* AllOrderDetailPage */], { tmpId: obj,
+                fromPage: "addMaterial" });
         });
     };
     CreateOrderAddMaterialPage.prototype.getLocation = function () {
@@ -633,13 +685,10 @@ var CreateOrderAddMaterialPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-create-order-add-material',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order-add-material/create-order-add-material.html"*/'<!--\n  Generated template for the CreateOrderAddMaterialPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n      <button ion-button menuToggle>\n          <ion-icon name="menu"></ion-icon>\n        </button>\n    <ion-title>สร้างรายการจัดซื้อ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6>\n        \n        <ion-card>\n\n          <ion-card-header>\n            สร้างรายการ\n          </ion-card-header>\n        \n          <ion-card-content class="add-material-style">\n          <ion-list>\n            <ion-item>\n              <ion-label>ชนิดยาเส้น</ion-label>\n              <ion-select [(ngModel)]="productSel" (ionChange)="onProductTypeChange($event)" placeholder="เลือกชนิดยาเส้น">\n                <ion-option *ngFor="let item of producTypeObj" [value]="item.PRODUCT_TYPE_ID">{{item.PRODUCT_TYPE_NAME}}</ion-option>\n              </ion-select>\n            </ion-item>\n\n            \n            <ion-item>\n                <ion-label>เบอร์ยาเส้น</ion-label>\n                <ion-select [disabled]="!isGetData" (ionChange)="onProductSizeChange($event)" [(ngModel)]="productSizeSel" placeholder="เลือกเบอร์ยาเส้น">\n                  <ion-option *ngFor="let item of producSizeObj" [value]="item.PRODUCT_SIZE_ID">{{item.PRODUCT_SIZE_NAME}}</ion-option>\n                </ion-select>\n             \n              </ion-item>\n\n              <ion-item >\n                  <ion-label>จำนวนถุง</ion-label>\n                  <ion-input class="input-text-alight-right" (keyup)="onQtyChange()" type="number" pattern="[0-9]*" [(ngModel)]="qty" placeholder="0"></ion-input>\n                </ion-item>\n\n                <ion-item >\n                  <ion-label>น้ำหนัก/กิโลกรัม</ion-label>\n                  <ion-input class="input-text-alight-right" [(ngModel)]="weight" type="text" [disabled]="true" placeholder="0" value="0">0</ion-input>\n                </ion-item>\n                <ion-item >\n                  <ion-label>ราคา/ถุง</ion-label>\n                  <ion-input class="input-text-alight-right" [(ngModel)]="price" type="text" [disabled]="true" value="0">0</ion-input>\n                </ion-item>\n\n                <ion-row justify-content-center>\n                  <!-- <ion-col col-6>\n                      <button ion-button block color="light">ยกเลิกการทำรายการ</button>\n                  </ion-col> -->\n                  <ion-col col-6>\n                      <button  *ngIf="!isEdit"  ion-button block [disabled]="!canAdd" on-click="addItem()">เพิ่มรายการ</button>\n                      <button  *ngIf="isEdit" ion-button block [disabled]="!canAdd" on-click="editItem()">แก้ไขรายการ</button>\n                  </ion-col>\n\n                  \n                </ion-row> \n\n      \n          \n          </ion-list>\n          </ion-card-content>\n        \n        </ion-card>\n\n      </ion-col>\n      <ion-col col-6>\n        \n        <ion-card>\n\n          <ion-card-header>\n            รายการซื้อ {{displayUserData.fullname}}\n          </ion-card-header>\n        \n          <ion-card-content>\n            \n            <ion-list  *ngFor="let item of arrayAdded; index as i;" >\n              <ion-item-sliding>\n                <ion-item  >\n                  <h2>{{getProductTypeName(item.productType)}}</h2>\n                  <h3>{{getProductSizeName(item.productSize)}}</h3>\n\n                  <p item-end style="text-align:right;">{{item.weight}} กิโลกรัม<br>{{item.qty}} ถุง<br>{{item.price}} บาท</p>\n   \n                \n                </ion-item>\n       \n                <ion-item-options side="right">\n\n                    <button  ion-button on-click="editList(i)" color="info">\n                        <ion-icon name="ios-build-outline"></ion-icon>\n                      </button>\n                  <button   ion-button on-click="removeList(i)" color="danger">\n                    <ion-icon name="ios-remove-circle-outline"></ion-icon>\n                  </button>\n          \n                </ion-item-options>\n              </ion-item-sliding>\n            </ion-list>\n\n\n          </ion-card-content>\n\n\n          <ion-item>\n              <span item-left>จำนวนรวม : {{sumWeight}} <br> จำนวนถุงรวม : {{sumQty}}</span>\n              <span  item-end>\n                ราคารวม : {{sumPrice}}\n              </span>\n            </ion-item>\n\n        \n        </ion-card>\n\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n        <ion-col col-12>\n            <button  ion-button block [disabled]="arrayAdded.length == 0" on-click="showPrompt()">เสร็จสิ้นการทำรายการ</button>\n           \n        </ion-col>\n    </ion-row>\n    \n   \n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order-add-material/create-order-add-material.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* DecimalPipe */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__["a" /* Geolocation */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__["a" /* RestProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__["a" /* RestProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["e" /* DecimalPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common__["e" /* DecimalPipe */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _g || Object])
     ], CreateOrderAddMaterialPage);
     return CreateOrderAddMaterialPage;
+    var _a, _b, _c, _d, _e, _f, _g;
 }());
 
 //# sourceMappingURL=create-order-add-material.js.map
@@ -654,7 +703,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step3PageModule", function() { return Step3PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step3__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step3__ = __webpack_require__(275);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -691,7 +740,6 @@ var Step3PageModule = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReportPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__page3_page3__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -703,7 +751,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var ReportPage = (function () {
     function ReportPage(navCtrl, menuCtrl) {
         this.navCtrl = navCtrl;
@@ -712,15 +759,15 @@ var ReportPage = (function () {
         this.menuCtrl.enable(true);
     }
     ReportPage.prototype.ssss = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__page3_page3__["a" /* Page3Page */]);
     };
     ReportPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-report',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/report/report.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      report\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page1">\n  <div>ssdfsdsf</div>\n  <div>\n  <ion-list id="report-list4">\n    <ion-item id="report-list-item-container3">\n      <div id="report-markdown8" class="show-list-numbers-and-dots">\n        <p style="margin-top:0px;color:#000000;">\n          we\n        </p>\n      </div>\n    </ion-item>\n    <ion-list id="report-list5">\n      <ion-item color="none" on-click="ssss()" id="report-list-item16">\n        Item 1\n      </ion-item>\n      <ion-item color="none" id="report-list-item17">\n        Item 2\n      </ion-item>\n      <ion-item color="none" id="report-list-item18">\n        Item 3\n      </ion-item>\n    </ion-list>\n  </ion-list>\n</div>\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/report/report.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]) === "function" && _b || Object])
     ], ReportPage);
     return ReportPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=report.js.map
@@ -806,7 +853,7 @@ var SettingsPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_order_create_order__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -920,32 +967,30 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(293);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_report_report__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_page3_page3__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_settings_settings__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_step3_step3_module__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_create_order_create_order_module__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_rest_rest__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_common_http__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_http__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_common__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_all_order_all_order_module__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_geolocation__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_common_locales_th__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_settings_settings__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_step3_step3_module__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_create_order_create_order_module__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_rest_rest__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_common_http__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_http__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_common__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_all_order_all_order_module__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_geolocation__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_common_locales_th__ = __webpack_require__(294);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -966,7 +1011,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-Object(__WEBPACK_IMPORTED_MODULE_16__angular_common__["j" /* registerLocaleData */])(__WEBPACK_IMPORTED_MODULE_19__angular_common_locales_th__["a" /* default */], 'th');
+Object(__WEBPACK_IMPORTED_MODULE_15__angular_common__["k" /* registerLocaleData */])(__WEBPACK_IMPORTED_MODULE_18__angular_common_locales_th__["a" /* default */], 'th');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -976,16 +1021,15 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_report_report__["a" /* ReportPage */],
                 __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_page3_page3__["a" /* Page3Page */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_settings_settings__["a" /* SettingsPage */]
+                __WEBPACK_IMPORTED_MODULE_6__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_settings_settings__["a" /* SettingsPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_step3_step3_module__["Step3PageModule"],
-                __WEBPACK_IMPORTED_MODULE_12__pages_create_order_create_order_module__["CreateOrderPageModule"],
-                __WEBPACK_IMPORTED_MODULE_14__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_all_order_all_order_module__["AllOrderPageModule"],
+                __WEBPACK_IMPORTED_MODULE_8__pages_step3_step3_module__["Step3PageModule"],
+                __WEBPACK_IMPORTED_MODULE_11__pages_create_order_create_order_module__["CreateOrderPageModule"],
+                __WEBPACK_IMPORTED_MODULE_13__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_all_order_all_order_module__["AllOrderPageModule"],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {
                     backButtonText: 'ย้อนกลับ',
                     iconMode: 'ios',
@@ -1006,21 +1050,22 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_report_report__["a" /* ReportPage */],
                 __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_page3_page3__["a" /* Page3Page */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_login_login__["a" /* LoginPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_settings_settings__["a" /* SettingsPage */]
+                __WEBPACK_IMPORTED_MODULE_6__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_settings_settings__["a" /* SettingsPage */]
             ],
             providers: [
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* LOCALE_ID */],
                     useValue: 'th-TH' },
-                __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_11__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_13__providers_rest_rest__["a" /* RestProvider */],
-                __WEBPACK_IMPORTED_MODULE_15__ionic_native_http__["a" /* HTTP */],
-                __WEBPACK_IMPORTED_MODULE_16__angular_common__["d" /* DecimalPipe */],
+                __WEBPACK_IMPORTED_MODULE_12__providers_rest_rest__["a" /* RestProvider */],
+                __WEBPACK_IMPORTED_MODULE_14__ionic_native_http__["a" /* HTTP */],
+                __WEBPACK_IMPORTED_MODULE_15__angular_common__["e" /* DecimalPipe */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
-                __WEBPACK_IMPORTED_MODULE_18__ionic_native_geolocation__["a" /* Geolocation */],
+                __WEBPACK_IMPORTED_MODULE_17__ionic_native_geolocation__["a" /* Geolocation */],
+                __WEBPACK_IMPORTED_MODULE_15__angular_common__["d" /* DatePipe */]
+                // AuthenticaitonProvider
             ]
         })
     ], AppModule);
@@ -1032,51 +1077,6 @@ var AppModule = (function () {
 /***/ }),
 
 /***/ 274:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllOrderDetailPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the AllOrderDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AllOrderDetailPage = (function () {
-    function AllOrderDetailPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    AllOrderDetailPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AllOrderDetailPage');
-    };
-    AllOrderDetailPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-all-order-detail',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order-detail/all-order-detail.html"*/'<!--\n  Generated template for the AllOrderDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>allOrderDetail</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order-detail/all-order-detail.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], AllOrderDetailPage);
-    return AllOrderDetailPage;
-}());
-
-//# sourceMappingURL=all-order-detail.js.map
-
-/***/ }),
-
-/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1116,7 +1116,7 @@ var CreateOrderAddMaterialProvider = (function () {
 
 /***/ }),
 
-/***/ 276:
+/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1161,7 +1161,7 @@ var Step3Page = (function () {
 
 /***/ }),
 
-/***/ 294:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1172,13 +1172,12 @@ var Step3Page = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_report_report__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_page3_page3__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_settings_settings__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_create_order_create_order__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_rest_rest__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_all_order_all_order__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_settings_settings__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_create_order_create_order__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_all_order_all_order__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_login_login__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1188,7 +1187,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -1207,7 +1205,8 @@ var MyApp = (function () {
         this.menuCtrl = menuCtrl;
         this.restProvider = restProvider;
         this.geolocation = geolocation;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_11__pages_login_login__["a" /* LoginPage */]; //CreateOrderPage;//LoginPage;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_10__pages_login_login__["a" /* LoginPage */]; //CreateOrderPage;//LoginPage;
+        this.userName = [];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -1217,6 +1216,10 @@ var MyApp = (function () {
             // set status bar to white
             // statusBar.backgroundColorByHexString('#CCCCCC');
             splashScreen.hide();
+            _this.userName = {
+                'firstName': '',
+                'lastName': ''
+            };
             console.log("callgeo----------");
             _this.geolocation.getCurrentPosition().then(function (resp) {
                 // resp.coords.latitude
@@ -1225,6 +1228,15 @@ var MyApp = (function () {
                 // resp.coords.longitude
             }).catch(function (error) {
                 console.log('Error getting location', JSON.stringify(error));
+            });
+            _this.subscription = _this.restProvider.subUserData().subscribe(function (userData) {
+                _this.userName = {
+                    'firstName': userData.userData.FIRSTNAME,
+                    'lastName': userData.userData.LASTNAME,
+                    'userType': userData.userData.USER_TYPE
+                };
+                console.log(userData);
+                console.log(_this.userName);
             });
         });
     }
@@ -1237,10 +1249,10 @@ var MyApp = (function () {
     MyApp.prototype.goToCreateOrder = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_8__pages_create_order_create_order__["a" /* CreateOrderPage */]);
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_7__pages_create_order_create_order__["a" /* CreateOrderPage */]);
     };
     MyApp.prototype.goToAllOrder = function () {
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_10__pages_all_order_all_order__["a" /* AllOrderPage */]);
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_9__pages_all_order_all_order__["a" /* AllOrderPage */]);
     };
     MyApp.prototype.goToReport = function (params) {
         if (!params)
@@ -1255,31 +1267,30 @@ var MyApp = (function () {
     MyApp.prototype.goToPage3 = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_6__pages_page3_page3__["a" /* Page3Page */]);
     };
     MyApp.prototype.goToSettings = function (params) {
         if (!params)
             params = {};
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_7__pages_settings_settings__["a" /* SettingsPage */]);
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_6__pages_settings_settings__["a" /* SettingsPage */]);
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */]) === "function" && _a || Object)
     ], MyApp.prototype, "navCtrl", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/app/app.html"*/'<ion-split-pane>\n  <ion-menu ng-hide="true" type="push" [content]="mainContent">\n\n    <ion-content class="main-bg-color" id="side-menu21">\n      <ion-card text-center class="hide-card">\n        <img src="assets/imgs/avatar/default.png" class="custom-avatar" />\n        <h1></h1>\n        <h2></h2>\n      </ion-card>\n\n      <ion-list id="menu-list1">\n\n\n        <ion-item color="white" menuClose="" on-click="goToCreateOrder()" id="menu-list-item1">\n          <ion-icon name="barcode" item-left></ion-icon>\n          ทำรายการรับซื้อ\n        </ion-item>\n\n        <ion-item color="white" menuClose="" on-click="goToAllOrder()" id="menu-list-item1">\n          <ion-icon name="barcode" item-left></ion-icon>\n          ประวัติการซื้อขาย\n        </ion-item>\n        <!-- <ion-item color="none" menuClose="" on-click="goToList()" id="menu-list-item2">\n          <ion-icon name="ionic" item-left></ion-icon>\n          รายชื่อคนกลาง\n        </ion-item> -->\n        <ion-item color="none" menuClose="" on-click="goToPage3()" id="menu-list-item3">\n          <ion-icon name="ionic" item-left></ion-icon>\n          นโยบาย และข้อตกลงในการรับซื้อ\n        </ion-item>\n        <ion-item color="none" menuClose="" on-click="goToSettings()" id="menu-list-item20">\n          <ion-icon name="settings" item-left></ion-icon>\n          ตั้งค่า\n        </ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-nav main #mainContent [root]="rootPage"></ion-nav>\n\n</ion-split-pane>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/app/app.html"*/'<ion-split-pane>\n  <ion-menu ng-hide="true" type="push" [content]="mainContent">\n\n    <ion-content class="main-bg-color" id="side-menu21">\n      <ion-card text-center class="hide-card">\n        <img src="assets/imgs/avatar/default.png" class="custom-avatar" />\n        <h1 style="color: white;" >{{userName.firstName}} {{userName.lastName}}</h1>\n        <h2 style="color: white;">{{userName.userType}}</h2> \n      </ion-card>\n\n      <ion-list id="menu-list1">\n\n\n        <ion-item color="white" menuClose="" on-click="goToCreateOrder()" id="menu-list-item1">\n          <ion-icon name="barcode" item-left></ion-icon>\n          ทำรายการรับซื้อ\n        </ion-item>\n\n        <ion-item color="white" menuClose="" on-click="goToAllOrder()" id="menu-list-item1">\n          <ion-icon name="barcode" item-left></ion-icon>\n          ประวัติการซื้อขาย\n        </ion-item>\n        <!-- <ion-item color="none" menuClose="" on-click="goToList()" id="menu-list-item2">\n          <ion-icon name="ionic" item-left></ion-icon>\n          รายชื่อคนกลาง\n        </ion-item> -->\n        <ion-item color="none" menuClose="" on-click="goToPage3()" id="menu-list-item3">\n          <ion-icon name="ionic" item-left></ion-icon>\n          นโยบาย และข้อตกลงในการรับซื้อ\n        </ion-item>\n        <ion-item color="none" menuClose="" on-click="goToSettings()" id="menu-list-item20">\n          <ion-icon name="settings" item-left></ion-icon>\n          ตั้งค่า\n        </ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-nav main #mainContent [root]="rootPage"></ion-nav>\n\n</ion-split-pane>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */],
-            __WEBPACK_IMPORTED_MODULE_9__providers_rest_rest__["a" /* RestProvider */], __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__["a" /* Geolocation */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__["a" /* RestProvider */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _g || Object])
     ], MyApp);
     return MyApp;
+    var _a, _b, _c, _d, _e, _f, _g;
 }());
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 33:
+/***/ 30:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1287,7 +1298,9 @@ var MyApp = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_http__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_http__ = __webpack_require__(161);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1297,6 +1310,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1313,6 +1327,7 @@ var RestProvider = (function () {
         this.httpClient = httpClient;
         this.loadingCtrl = loadingCtrl;
         this.timeout = 45;
+        this.subject = new __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__["Subject"]();
         //private apiUrl:string = "https://digiday.co.th";
         this.apiUrl = "http://localhost:8100";
         console.log('Hello RestProvider Provider');
@@ -1404,13 +1419,18 @@ var RestProvider = (function () {
     };
     RestProvider.prototype.setUserData = function (userData) {
         this.userData = userData;
+        this.subject.next({ userData: userData });
     };
     RestProvider.prototype.getUserData = function () {
         return this.userData;
+        // return this.subject.asObservable();
+    };
+    RestProvider.prototype.subUserData = function () {
+        return this.subject.asObservable();
     };
     RestProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ionic_native_http__["a" /* HTTP */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* LoadingController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__ionic_native_http__["a" /* HTTP */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* LoadingController */]])
     ], RestProvider);
     return RestProvider;
 }());
@@ -1426,8 +1446,9 @@ var RestProvider = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllOrderPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__all_order_detail_all_order_detail__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__all_order_detail_all_order_detail__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1441,6 +1462,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the AllOrderPage page.
  *
@@ -1448,20 +1470,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var AllOrderPage = (function () {
-    function AllOrderPage(navCtrl, navParams, restProvider, loadingCtrl, modalCtrl) {
+    function AllOrderPage(navCtrl, navParams, restProvider, loadingCtrl, modalCtrl, datePipe) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.restProvider = restProvider;
         this.loadingCtrl = loadingCtrl;
         this.modalCtrl = modalCtrl;
+        this.datePipe = datePipe;
     }
     AllOrderPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AllOrderPage');
         this.getAllOrderList();
     };
-    AllOrderPage.prototype.showDetail = function () {
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__all_order_detail_all_order_detail__["a" /* AllOrderDetailPage */]);
-        modal.present();
+    AllOrderPage.prototype.showDetail = function (i) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__all_order_detail_all_order_detail__["a" /* AllOrderDetailPage */], {
+            id: i
+        });
     };
     AllOrderPage.prototype.getAllOrderList = function () {
         var _this = this;
@@ -1478,6 +1502,13 @@ var AllOrderPage = (function () {
         this.restProvider.getService(obj).then(function (data) {
             if (data["status"]) {
                 _this.orderList = data['data'];
+                _this.tmpOrderList = data['data'];
+                _this.orderList.forEach(function (item, index) {
+                    //  item.ORDER_DATE=new Date();
+                    _this.orderList[index]['newDate'] = _this.datePipe.transform(item.ORDER_DATE, 'dd MMMM yyyy');
+                    _this.tmpOrderList[index]['newDate'] = _this.datePipe.transform(item.ORDER_DATE, 'dd MMMM yyyy');
+                });
+                console.log(_this.orderList);
             }
             else {
             }
@@ -1488,12 +1519,47 @@ var AllOrderPage = (function () {
             console.log(error);
         });
     };
+    AllOrderPage.prototype.getTmpOrderList = function () {
+        this.orderList = this.tmpOrderList;
+    };
+    AllOrderPage.prototype.getItems = function (ev) {
+        // Reset items back to all of the items
+        //this.initializeItems();
+        // this.getTmpOrderList();
+        var listFilter = [];
+        // set val to the value of the ev target
+        var val = ev.target.value;
+        // console.log(this.tmpOrderList);
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            //  this.orderList =
+            this.tmpOrderList.filter(function (item) {
+                if (item.FIRSTNAME.toLowerCase().indexOf(val.toLowerCase()) > -1) {
+                    listFilter.push(item);
+                }
+                if (item.LASTNAME.toLowerCase().indexOf(val.toLowerCase()) > -1) {
+                    listFilter.push(item);
+                }
+                if (item.RECEIPT_NO.toLowerCase().indexOf(val.toLowerCase()) > -1) {
+                    listFilter.push(item);
+                }
+                if (item.newDate.toLowerCase().indexOf(val.toLowerCase()) > -1) {
+                    listFilter.push(item);
+                }
+                // return (item.FIRSTNAME.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            });
+            this.orderList = listFilter;
+        }
+        else {
+            this.getTmpOrderList();
+        }
+    };
     AllOrderPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-all-order',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order/all-order.html"*/'<!--\n  Generated template for the AllOrderPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n     <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ประวัติการซื้อขาย</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n\n    <ion-card>\n        <ion-card-header>\n            ประวัติการซื้อขาย\n          </ion-card-header>\n\n\n        <ion-grid>\n            <ion-row class="header-list">\n              <ion-col >\n                <div style="text-align: center;">วันที่</div>\n              </ion-col>\n              <ion-col>\n                <div>เลขที่ใบเสร็จ</div>\n              </ion-col>\n              <ion-col>\n                  <div>จำนวน/ถุง</div>\n                </ion-col>\n                <ion-col>\n                  <div>ยอดการซื้อขาย</div>\n                </ion-col>\n            </ion-row>\n\n\n\n<div class=\'section\'>\n            <ion-row *ngFor="let item of orderList; index as i;" on-click="showDetail();" >\n                <ion-col>\n                  <div>{{item.ORDER_DATE | date:\'dd MMMM yyyy\'}} </div>\n                 \n                </ion-col>\n                <ion-col>\n                  <div>{{item.RECEIPT_NO}}</div>\n                </ion-col>\n                <ion-col style="text-align: right;">\n                    <div>{{item.ITEM_QUANTITY}}</div>\n                  </ion-col>\n                  <ion-col style="text-align: right;">\n                    <div>{{item.ORDER_NET}}</div>\n                  </ion-col>\n              </ion-row>\n            </div>\n      \n          </ion-grid>\n\n<!-- \n       \n                 <iframe width="100%" height="500" frameBorder="0" src="https://digiday.co.th/bms_dev/report_order_fixed"></iframe>\n     -->\n      </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order/all-order.html"*/,
+            selector: 'page-all-order',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order/all-order.html"*/'<!--\n  Generated template for the AllOrderPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ประวัติการซื้อขาย</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n\n  <ion-card >\n    <!-- <ion-card-header>\n      ประวัติการซื้อขาย\n    </ion-card-header>\n -->\n\n    <ion-grid>\n\n\n      <ion-row>\n        <ion-col>\n        </ion-col>\n        <ion-col>\n        </ion-col>\n\n        <ion-col>\n          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n        </ion-col>\n\n\n      </ion-row>\n\n\n      <ion-row class="header-list">\n        <ion-col col-2 style="text-align: center;">\n          <div>เลขที่ใบเสร็จ</div>\n        </ion-col>\n        <ion-col col-3>\n          <div style="text-align: center;">วันที่</div>\n        </ion-col>\n        <ion-col col-3 style="text-align: center;">\n          <div>ชื่อ นามสกุล</div>\n        </ion-col>\n        <ion-col col-2 style="text-align: center;">\n          <div>จำนวน/ถุง</div>\n        </ion-col>\n        <ion-col col-2 style="text-align: center;">\n          <div>ยอดการซื้อขาย</div>\n        </ion-col>\n      </ion-row>\n\n\n\n      <div class=\'section\'>\n        <ion-row *ngFor="let item of orderList; index as i;" on-click="showDetail(item);">\n\n          <ion-col col-2 class="border-right" style="text-align: center;">\n            <div>{{item.RECEIPT_NO}}</div>\n          </ion-col>\n\n          <ion-col col-3 class="border-right"  style="text-align: center;">\n            <div>{{item.ORDER_DATE | date:\'dd MMMM yyyy\'}} {{item.ORDER_TIME}}</div>\n          </ion-col>\n\n          <ion-col class="border-right"  style="text-align: center;" col-3>\n            <div>{{item.FIRSTNAME}} {{item.LASTNAME}}</div>\n          </ion-col>\n\n          <ion-col class="border-right"  style="text-align: right;" col-2>\n            <div>{{item.ITEM_QUANTITY}}</div>\n          </ion-col>\n\n          <ion-col style="text-align: right;" col-2>\n            <div>{{item.ORDER_NET}}</div>\n          </ion-col>\n\n        </ion-row>\n      </div>\n\n    </ion-grid>\n\n    <!-- \n       \n                 <iframe width="100%" height="500" frameBorder="0" src="https://digiday.co.th/bms_dev/report_order_fixed"></iframe>\n     -->\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order/all-order.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */], __WEBPACK_IMPORTED_MODULE_4__angular_common__["d" /* DatePipe */]])
     ], AllOrderPage);
     return AllOrderPage;
 }());
@@ -1605,7 +1671,7 @@ var CreateOrderPage = (function () {
     };
     CreateOrderPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-create-order',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order/create-order.html"*/'<!--\n  Generated template for the CreateOderPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ทำรายการรับซื้อ</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content class="test" padding>\n\n\n  <ion-card class="card-container hide-card ">\n\n    <ion-card-content style="text-align: center;">\n\n      <div [ngSwitch]="scanStatus">\n        <ion-grid *ngSwitchCase="\'hide\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="add-circle-outline" on-click="callQrScanner()"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n\n\n              <p class="add-new-text">\n                กดเพื่อเริ่มทำรายการใหม่\n              </p>\n\n\n\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n        <ion-grid *ngSwitchCase="\'show\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="qr-scanner-outline"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n              <p class="add-new-text" on-click="hideCamera()">\n                ยกเลิก\n              </p>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </div>\n\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order/create-order.html"*/,
+            selector: 'page-create-order',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order/create-order.html"*/'<!--\n  Generated template for the CreateOderPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ทำรายการรับซื้อ</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="test" padding>\n  <ion-card class="card-container hide-card ">\n    <ion-card-content style="text-align: center;">\n      <div [ngSwitch]="scanStatus">\n        <ion-grid *ngSwitchCase="\'hide\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="add-circle-outline" on-click="callQrScanner()"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n              <p class="add-new-text">\n                กดเพื่อเริ่มทำรายการใหม่\n              </p>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n        <ion-grid *ngSwitchCase="\'show\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="qr-scanner-outline"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n              <p class="add-new-text" on-click="hideCamera()">\n                ยกเลิก\n              </p>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order/create-order.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_qr_scanner__["a" /* QRScanner */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]])

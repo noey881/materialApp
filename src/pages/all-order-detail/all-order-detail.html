@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>allOrderDetail</ion-title>
+    <ion-title>ประวัติการซื้อขาย</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,90 @@
 
 <ion-content padding>
 
+  <ion-card padding>
+  
+    <div class="header-detail">
+      <div>
+        <h2>เลขที่ใบเสร็จ : {{userDisplay.RECEIPT_NO}}</h2>
+
+      </div>
+
+      <div>
+        <h2>ชื่อ - นามสกุล : {{userDisplay.FIRSTNAME}} {{userDisplay.LASTNAME}}</h2>
+      </div>
+      <div>
+        <h2>วัน - เวลาที่ซื้อ : {{userDisplay.ORDER_DATE | date:'dd MMMM yyyy'}} {{userDisplay.ORDER_TIME}}</h2>
+      </div>
+  </div>
+
+  <div class="break-section"></div>
+
+
+
+  <ion-row class="header-list">
+      <ion-col col-1 style="text-align: center;">
+        <div>ลำดับ</div>
+      </ion-col>
+      <ion-col col-3 style="text-align: center;">
+        <div>ประเภทสินค้า</div>
+      </ion-col>
+      <ion-col col-2 style="text-align: center;">
+        <div>ชนิดสินค้า</div>
+      </ion-col>
+      <ion-col col-2 style="text-align: center;">
+        <div>จำนวนที่ซื้อ</div>
+      </ion-col>
+      <ion-col col-2 style="text-align: center;">
+        <div>ราคาต่อชิ้น</div>
+      </ion-col>
+      <ion-col col-2 style="text-align: center;">
+          <div>ราคารวม</div>
+        </ion-col>
+    </ion-row>
+
+
+
+    <div class='section'>
+      <ion-row *ngFor="let item of orderDetailData; index as i;">
+
+        <ion-col col-1 class="border-right" style="text-align: center;">
+          <div>{{i+1}}</div>
+        </ion-col>
+
+        <ion-col col-3 class="border-right"  style="text-align: center;">
+          <div>{{item.PRODUCT_TYPE_NAME}}</div>
+        </ion-col>
+
+        <ion-col class="border-right"  style="text-align: center;" col-2>
+          <div>{{item.PRODUCT_SIZE_NAME}}</div>
+        </ion-col>
+
+        <ion-col class="border-right"  style="text-align: right;" col-2>
+          <div>{{item.ITEM_QTY}}</div>
+        </ion-col>
+
+        <ion-col class="border-right"  style="text-align: right;" col-2>
+          <div>{{item.PRICE_PER_ITEM}}</div>
+        </ion-col>
+        <ion-col style="text-align: right;" col-2>
+            <div>{{item.ITEM_AMNT | number:'3.2-5'}}</div>
+          </ion-col>
+  
+      </ion-row>
+
+
+      <ion-row>
+
+          <ion-col class="border-right"  style="text-align: right;" col-10>
+              <div>รวมทั้งสิ้น</div>
+            </ion-col>
+            <ion-col style="text-align: right;" col-2>
+                <div>{{userDisplay.ORDER_NET}}</div>
+              </ion-col>
+      </ion-row>
+    </div>
+
+
+
+  </ion-card> 
 </ion-content>

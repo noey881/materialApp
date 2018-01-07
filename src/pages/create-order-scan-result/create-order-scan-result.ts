@@ -86,7 +86,7 @@ export class CreateOrderScanResultPage {
       }else{
         this.querySataus = true;
         this.resultData = { 
-          "name": name,
+          "name": fullname,
           "userType": userType,
           "address": address
         }    

@@ -28048,6 +28048,31 @@ page-all-order .section > ion-row {
   padding: 10px;
 }
 
+page-all-order .border-right {
+  border-right: 1px solid #cccccc;
+}
+
+page-all-order-detail div.header-detail div {
+  margin-top: 20px;
+}
+
+page-all-order-detail .break-section {
+  height: 30px;
+}
+
+page-all-order-detail div.section ion-row:nth-child(odd) {
+  background: #f2f5f8;
+}
+
+page-all-order-detail .section > ion-row {
+  border-bottom: 1px solid #cccccc;
+  padding: 10px;
+}
+
+page-all-order-detail .border-right {
+  border-right: 1px solid #cccccc;
+}
+
 page-create-order .add-icon {
   font-size: 30vw;
   color: #8ca0be;

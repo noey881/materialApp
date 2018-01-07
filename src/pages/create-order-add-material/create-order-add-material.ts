@@ -4,6 +4,8 @@ import { DecimalPipe } from '@angular/common';
 import { RestProvider } from '../../providers/rest/rest';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AllOrderPage } from '../all-order/all-order';
+import { AllOrderDetailPage } from '../all-order-detail/all-order-detail'
+
 /**
  * Generated class for the CreateOrderAddMaterialPage page.
  *
@@ -365,8 +367,10 @@ export class CreateOrderAddMaterialPage {
     this.restProvider.postService(obj).then(data => {
       console.log(data)
       this.loader.dismiss();
-      this.navCtrl.setRoot(AllOrderPage);
-      
+
+      this.navCtrl.setRoot(AllOrderDetailPage, {tmpId: obj,
+                                          fromPage:"addMaterial"});
+ 
 
     });
     

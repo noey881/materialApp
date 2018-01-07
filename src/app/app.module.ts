@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler, AlertController } from 'ionic
 import { MyApp } from './app.component';
 import { ReportPage } from '../pages/report/report';
 import { ListPage } from '../pages/list/list';
-import { Page3Page } from '../pages/page3/page3';
+
 import { LoginPage } from '../pages/login/login';
 import { SettingsPage } from '../pages/settings/settings';
 import {Step3PageModule} from '../pages/step3/step3.module';
@@ -16,7 +16,7 @@ import { RestProvider } from '../providers/rest/rest';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP } from '@ionic-native/http';
 
-import { DecimalPipe, registerLocaleData } from '@angular/common';
+import { DecimalPipe, registerLocaleData, DatePipe } from '@angular/common';
 
 import { AllOrderPageModule } from '../pages/all-order/all-order.module';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -29,7 +29,7 @@ registerLocaleData(localeTh, 'th');
     MyApp,
     ReportPage,
     ListPage,
-    Page3Page,
+
     LoginPage,
     SettingsPage
   ],
@@ -54,7 +54,6 @@ registerLocaleData(localeTh, 'th');
     MyApp,
     ReportPage,
     ListPage,
-    Page3Page,
     LoginPage,
     SettingsPage
   ],
@@ -69,6 +68,7 @@ registerLocaleData(localeTh, 'th');
     DecimalPipe,
     AlertController,
     Geolocation,
+    DatePipe
     
    // AuthenticaitonProvider
 

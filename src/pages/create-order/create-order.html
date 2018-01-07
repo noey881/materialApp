@@ -5,24 +5,16 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>ทำรายการรับซื้อ</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content class="test" padding>
-
-
   <ion-card class="card-container hide-card ">
-
     <ion-card-content style="text-align: center;">
-
       <div [ngSwitch]="scanStatus">
         <ion-grid *ngSwitchCase="'hide'">
           <ion-row>
@@ -32,17 +24,11 @@
           </ion-row>
           <ion-row>
             <ion-col col-12>
-
-
               <p class="add-new-text">
                 กดเพื่อเริ่มทำรายการใหม่
               </p>
-
-
-
             </ion-col>
           </ion-row>
-
         </ion-grid>
         <ion-grid *ngSwitchCase="'show'">
           <ion-row>
@@ -57,13 +43,8 @@
               </p>
             </ion-col>
           </ion-row>
-
         </ion-grid>
-
       </div>
-
     </ion-card-content>
   </ion-card>
-
-
 </ion-content>

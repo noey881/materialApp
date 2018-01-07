@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { AllOrderPage } from './all-order';
 import { AllOrderDetailPage } from '../all-order-detail/all-order-detail';
+
 @NgModule({
   declarations: [
     AllOrderPage,

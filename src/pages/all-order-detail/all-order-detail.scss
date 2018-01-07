@@ -1,3 +1,30 @@
 page-all-order-detail {
 
+    div.header-detail div{
+        margin-top:20px;
+    }
+    .break-section{
+        height: 30px;
+    }
+
+    // div.section ion-row:nth-child(even)
+    // {
+       
+    //    // background: rgb(193, 230, 236);
+     
+    // }
+    div.section ion-row:nth-child(odd)
+    {
+        background: hsl(210, 30%, 96%);
+        //  background: rgb(189, 214, 235);
+    }
+
+    .section > ion-row{
+        border-bottom: 1px solid #cccccc;
+        padding:10px;
+    }
+
+    .border-right{
+        border-right: 1px solid #cccccc;
+    }
 }
