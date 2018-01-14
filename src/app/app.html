@@ -1,16 +1,20 @@
 <ion-split-pane>
   <ion-menu ng-hide="true" type="push" [content]="mainContent">
 
-    <ion-content class="main-bg-color" id="side-menu21">
-      <ion-card text-center class="hide-card">
+    <ion-content text-center style="background: #41C4FE;" id="side-menu21">
+
+
+
+      <div style="background: #41C4FE;">
+      <ion-card text-center  class="hide-card">
         <img src="assets/imgs/avatar/default.png" class="custom-avatar" />
         <h1 style="color: white;" >{{userName.firstName}} {{userName.lastName}}</h1>
         <h2 style="color: white;">{{userName.userType}}</h2> 
       </ion-card>
+    </div>
 
+    <div style="background: #41C4FE;">
       <ion-list id="menu-list1">
-
-
         <ion-item color="white" menuClose="" on-click="goToCreateOrder()" id="menu-list-item1">
           <ion-icon name="barcode" item-left></ion-icon>
           ทำรายการรับซื้อ
@@ -33,6 +37,7 @@
           ตั้งค่า
         </ion-item>
       </ion-list>
+    </div>
     </ion-content>
   </ion-menu>
 

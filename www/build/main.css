@@ -12,19 +12,24 @@
 
 /* Mixin */
 .main-bg-color {
-  /* ff3.6+ */
-  /* safari4+,chrome */
-  /* safari5.1+,chrome10+ */
-  /* opera 11.10+ */
-  /* ie10+ */
-  background: linear-gradient(37deg, #d6fffe 0%, #3badff 100%);
-  /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3BADFF', endColorstr='#D6FFFE',GradientType=0 );
-  /* ie6-9 */
+  background: url("../assets/imgs/bg-login.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.content-bg {
+  background: #ECF4FA !important;
+}
+
+.side-menu-color {
+  background: #90DFF8;
 }
 
 ion-content {
   background: rbg(236, 244, 250) !important;
+}
+
+ion-card {
+  border-radius: 5px;
 }
 
 ion-app.cameraView, ion-app.cameraView ion-content.test, ion-app.cameraView .nav-decor {
@@ -28010,9 +28015,9 @@ ion-navbar.toolbar {
 }
 
 .custom-avatar {
-  height: 10vw;
-  width: 10vw;
-  border: 1px solid #fff;
+  height: 5vw;
+  width: 5vw;
+  border: 0px solid #fff;
   border-radius: 50%;
   display: inline-block;
   margin-left: auto;

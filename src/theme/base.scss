@@ -37,13 +37,28 @@ p{
 
 .main-bg-color{
 
-  background: -moz-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* ff3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(214,255,254,1)), color-stop(100%, rgba(59,173,255,1))); /* safari4+,chrome */
-  background: -webkit-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* opera 11.10+ */
-  background: -ms-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* ie10+ */
-  background: linear-gradient(37deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3BADFF', endColorstr='#D6FFFE',GradientType=0 ); /* ie6-9 */
+  // background: -moz-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* ff3.6+ */
+  // background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(214,255,254,1)), color-stop(100%, rgba(59,173,255,1))); /* safari4+,chrome */
+  // background: -webkit-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* safari5.1+,chrome10+ */
+  // background: -o-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* opera 11.10+ */
+  // background: -ms-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* ie10+ */
+  // background: linear-gradient(37deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* w3c */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3BADFF', endColorstr='#D6FFFE',GradientType=0 ); /* ie6-9 */
+  background: url('../assets/imgs/bg-login.png')  no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.content-bg{
+
+  background:#ECF4FA !important;
+}
+
+.side-menu-color{
+  background: #90DFF8;
 }
 
 .toolbar-background {
@@ -54,6 +69,10 @@ p{
 ion-content{
 
   background: rbg(236,244,250) !important;
+}
+
+ion-card{
+  border-radius : 5px;
 }
 
 ion-app.cameraView, ion-app.cameraView ion-content.test, ion-app.cameraView .nav-decor {
