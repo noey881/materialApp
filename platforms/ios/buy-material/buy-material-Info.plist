@@ -47,8 +47,6 @@
     <string>The camera is used to scan QR codes.</string>
     <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
     <string>location used</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>used geolocation here</string>
     <key>NSMainNibFile~ipad</key>
     <string/>
     <key>UIBackgroundModes</key>
@@ -75,6 +73,30 @@
     <array>
       <string>UIInterfaceOrientationLandscapeRight</string>
       <string>UIInterfaceOrientationLandscapeLeft</string>
+    </array>
+    <key>Google Maps API Key</key>
+    <string>AIzaSyChnC4WqJMnjfSS2GXJIcrTZGdt-PYdosI</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Show your location on the map</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Trace your location on the map</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>googlechromes</string>
+      <string>comgooglemaps</string>
+    </array>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.802.material</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.802.material</string>
+        </array>
+      </dict>
     </array>
   </dict>
 </plist>

@@ -32,7 +32,7 @@ ion-card {
   border-radius: 5px;
 }
 
-ion-app.cameraView, ion-app.cameraView ion-content.test, ion-app.cameraView .nav-decor {
+ion-app.cameraView, ion-app.cameraView ion-content.camera-display, ion-app.cameraView .nav-decor {
   background: transparent none !important;
 }
 

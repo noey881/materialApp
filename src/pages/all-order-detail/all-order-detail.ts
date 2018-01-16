@@ -1,6 +1,15 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController ,Platform} from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
+import {
+  GoogleMaps,
+  GoogleMap,
+  GoogleMapsEvent,
+  GoogleMapOptions,
+  CameraPosition,
+  MarkerOptions,
+  Marker
+ } from '@ionic-native/google-maps';
 /**
  * Generated class for the AllOrderDetailPage page.
  *
@@ -21,8 +30,10 @@ export class AllOrderDetailPage {
   private getFromPage;
   private summaryResult;
 
+  map: GoogleMap;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private restProvider:RestProvider,
-    public loadingCtrl: LoadingController) {
+    public loadingCtrl: LoadingController, private platform:Platform) {
   }
 
   ionViewDidLoad() {
@@ -33,18 +44,26 @@ export class AllOrderDetailPage {
     this.summaryResult = this.navParams.get('tmpId');
 
 
+    this.platform.ready().then(() => {
+      alert("ready")
+      this.loadMap();
+    });
+
+    
+
+
     if( this.getFromPage == "addMaterial"){
 
       
     }
+
+    
 
     console.log(" this.getFromPage="+   this.getFromPage);
     console.log(" this.getFromPage="+   this.summaryResult);
     console.log('ionViewDidLoad AllOrderDetailPage id=' + JSON.stringify(this.orderDetailId) );
     this.getOrderDetail();
   }
-
-
 
 
   getOrderDetail(){
@@ -79,8 +98,52 @@ export class AllOrderDetailPage {
       console.log("thisis")
       console.log(error);
     });
+
+    
   }
 
+
+  loadMap() {
+
+
+    let mapOptions: GoogleMapOptions = {
+      camera: {
+        target: {
+          lat: 43.0741904,
+          lng: -89.3809802
+        },
+        zoom: 18,
+        tilt: 30
+      }
+    };
+  
+
+    this.map = GoogleMaps.create('map_canvas');
+
+    // Wait the MAP_READY before using any methods.
+    this.map.one(GoogleMapsEvent.MAP_READY)
+      .then(() => {
+        console.log('Map is ready!');
+
+        // Now you can use all methods safely.
+        this.map.addMarker({
+            title: 'Ionic',
+            icon: 'blue',
+            animation: 'DROP',
+            position: {
+              lat: 43.0741904,
+              lng: -89.3809802
+            }
+          })
+          .then(marker => {
+            marker.on(GoogleMapsEvent.MARKER_CLICK)
+              .subscribe(() => {
+                alert('clicked');
+              });
+          });
+
+      });
+  }
 
 
 }

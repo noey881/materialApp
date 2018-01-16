@@ -33,6 +33,12 @@
     },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.802.material"
+    },
+    "cordova-plugin-googlemaps": {
+      "API_KEY_FOR_IOS": "AIzaSyChnC4WqJMnjfSS2GXJIcrTZGdt-PYdosI",
+      "LOCATION_WHEN_IN_USE_DESCRIPTION": "Show your location on the map",
+      "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Trace your location on the map",
+      "PACKAGE_NAME": "com.802.material"
     }
   },
   "dependent_plugins": {
@@ -40,6 +46,9 @@
       "PACKAGE_NAME": "com.802.material"
     },
     "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.802.material"
+    },
+    "com.googlemaps.ios": {
       "PACKAGE_NAME": "com.802.material"
     }
   }

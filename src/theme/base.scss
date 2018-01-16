@@ -44,6 +44,8 @@ p{
   // background: -ms-linear-gradient(53deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* ie10+ */
   // background: linear-gradient(37deg, rgba(214,255,254,1) 0%, rgba(59,173,255,1) 100%); /* w3c */
   // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3BADFF', endColorstr='#D6FFFE',GradientType=0 ); /* ie6-9 */
+ 
+ 
   background: url('../assets/imgs/bg-login.png')  no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -54,7 +56,7 @@ p{
 
 .content-bg{
 
-  background:#ECF4FA !important;
+ background:#ECF4FA !important;
 }
 
 .side-menu-color{
@@ -75,6 +77,6 @@ ion-card{
   border-radius : 5px;
 }
 
-ion-app.cameraView, ion-app.cameraView ion-content.test, ion-app.cameraView .nav-decor {
+ion-app.cameraView, ion-app.cameraView ion-content.camera-display, ion-app.cameraView .nav-decor {
   background: transparent none !important; 
 }

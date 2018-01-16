@@ -25,10 +25,10 @@ var map = {
 		160
 	],
 	"../pages/create-order/create-order.module": [
-		164
+		166
 	],
 	"../pages/step3/step3.module": [
-		168
+		170
 	]
 };
 function webpackAsyncContext(req) {
@@ -57,12 +57,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__all_order__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__all_order_detail_all_order_detail__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_maps__ = __webpack_require__(165);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -81,6 +83,9 @@ var AllOrderPageModule = (function () {
             ],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__all_order_detail_all_order_detail__["a" /* AllOrderDetailPage */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_maps__["a" /* GoogleMaps */]
             ]
         })
     ], AllOrderPageModule);
@@ -220,7 +225,7 @@ var AllOrderPage = (function () {
 
 /***/ }),
 
-/***/ 164:
+/***/ 166:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -229,11 +234,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_order__ = __webpack_require__(83);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_qr_scanner__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_qr_scanner__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__create_order_scan_result_create_order_scan_result__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__create_order_add_material_create_order_add_material__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_create_order_add_material_create_order_add_material__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__create_order_scan_result_create_order_scan_result__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__create_order_add_material_create_order_add_material__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_create_order_add_material_create_order_add_material__ = __webpack_require__(275);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -279,7 +284,7 @@ var CreateOrderPageModule = (function () {
 
 /***/ }),
 
-/***/ 166:
+/***/ 168:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -287,7 +292,7 @@ var CreateOrderPageModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create_order_add_material_create_order_add_material__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create_order_add_material_create_order_add_material__ = __webpack_require__(169);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -396,7 +401,7 @@ var CreateOrderScanResultPage = (function () {
 
 /***/ }),
 
-/***/ 167:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -741,7 +746,7 @@ var CreateOrderAddMaterialPage = (function () {
 
 /***/ }),
 
-/***/ 168:
+/***/ 170:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -749,7 +754,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Step3PageModule", function() { return Step3PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step3__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__step3__ = __webpack_require__(276);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -779,7 +784,7 @@ var Step3PageModule = (function () {
 
 /***/ }),
 
-/***/ 210:
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -819,7 +824,7 @@ var ReportPage = (function () {
 
 /***/ }),
 
-/***/ 211:
+/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -854,7 +859,7 @@ var ListPage = (function () {
 
 /***/ }),
 
-/***/ 212:
+/***/ 214:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -889,7 +894,7 @@ var SettingsPage = (function () {
 
 /***/ }),
 
-/***/ 213:
+/***/ 215:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -992,13 +997,13 @@ var LoginPage = (function () {
 
 /***/ }),
 
-/***/ 214:
+/***/ 216:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(238);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1006,7 +1011,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 236:
+/***/ 238:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1014,22 +1019,22 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(293);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_report_report__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_settings_settings__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_step3_step3_module__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_create_order_create_order_module__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_report_report__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_settings_settings__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_step3_step3_module__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_create_order_create_order_module__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_rest_rest__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_common_http__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_http__ = __webpack_require__(162);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_common__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_all_order_all_order_module__ = __webpack_require__(160);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_geolocation__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_common_locales_th__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_common_locales_th__ = __webpack_require__(295);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1121,7 +1126,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 274:
+/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1161,7 +1166,7 @@ var CreateOrderAddMaterialProvider = (function () {
 
 /***/ }),
 
-/***/ 275:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1206,22 +1211,22 @@ var Step3Page = (function () {
 
 /***/ }),
 
-/***/ 293:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_report_report__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_settings_settings__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_report_report__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_settings_settings__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_create_order_create_order__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_rest_rest__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_all_order_all_order__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_login_login__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_login_login__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_geolocation__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1492,6 +1497,7 @@ var RestProvider = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_google_maps__ = __webpack_require__(165);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1504,6 +1510,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the AllOrderDetailPage page.
  *
@@ -1511,18 +1518,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var AllOrderDetailPage = (function () {
-    function AllOrderDetailPage(navCtrl, navParams, restProvider, loadingCtrl) {
+    function AllOrderDetailPage(navCtrl, navParams, restProvider, loadingCtrl, platform) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.restProvider = restProvider;
         this.loadingCtrl = loadingCtrl;
+        this.platform = platform;
         this.userDisplay = [];
     }
     AllOrderDetailPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
         this.orderDetailId = this.navParams.get('id');
         this.userDisplay = this.navParams.get('id');
         this.getFromPage = this.navParams.get('fromPage');
         this.summaryResult = this.navParams.get('tmpId');
+        this.platform.ready().then(function () {
+            alert("ready");
+            _this.loadMap();
+        });
         if (this.getFromPage == "addMaterial") {
         }
         console.log(" this.getFromPage=" + this.getFromPage);
@@ -1556,12 +1569,47 @@ var AllOrderDetailPage = (function () {
             console.log(error);
         });
     };
+    AllOrderDetailPage.prototype.loadMap = function () {
+        var _this = this;
+        var mapOptions = {
+            camera: {
+                target: {
+                    lat: 43.0741904,
+                    lng: -89.3809802
+                },
+                zoom: 18,
+                tilt: 30
+            }
+        };
+        this.map = __WEBPACK_IMPORTED_MODULE_3__ionic_native_google_maps__["a" /* GoogleMaps */].create('map_canvas');
+        // Wait the MAP_READY before using any methods.
+        this.map.one(__WEBPACK_IMPORTED_MODULE_3__ionic_native_google_maps__["b" /* GoogleMapsEvent */].MAP_READY)
+            .then(function () {
+            console.log('Map is ready!');
+            // Now you can use all methods safely.
+            _this.map.addMarker({
+                title: 'Ionic',
+                icon: 'blue',
+                animation: 'DROP',
+                position: {
+                    lat: 43.0741904,
+                    lng: -89.3809802
+                }
+            })
+                .then(function (marker) {
+                marker.on(__WEBPACK_IMPORTED_MODULE_3__ionic_native_google_maps__["b" /* GoogleMapsEvent */].MARKER_CLICK)
+                    .subscribe(function () {
+                    alert('clicked');
+                });
+            });
+        });
+    };
     AllOrderDetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-all-order-detail',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order-detail/all-order-detail.html"*/'<!--\n  Generated template for the AllOrderDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>ประวัติการซื้อขาย</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content  class="content-bg" padding>\n\n  <ion-card padding>\n  \n    <div class="header-detail">\n      <div>\n        <h2>เลขที่ใบเสร็จ : {{userDisplay.RECEIPT_NO}}</h2>\n\n      </div>\n\n      <div>\n        <h2>ชื่อ - นามสกุล : {{userDisplay.FIRSTNAME}} {{userDisplay.LASTNAME}}</h2>\n      </div>\n      <div>\n        <h2>วัน - เวลาที่ซื้อ : {{userDisplay.ORDER_DATE | date:\'dd MMMM yyyy\'}} {{userDisplay.ORDER_TIME}}</h2>\n      </div>\n  </div>\n\n  <div class="break-section"></div>\n\n\n\n  <ion-row class="header-list">\n      <ion-col col-1 style="text-align: center;">\n        <div>ลำดับ</div>\n      </ion-col>\n      <ion-col col-3 style="text-align: center;">\n        <div>ประเภทสินค้า</div>\n      </ion-col>\n      <ion-col col-2 style="text-align: center;">\n        <div>ชนิดสินค้า</div>\n      </ion-col>\n      <ion-col col-2 style="text-align: center;">\n        <div>จำนวนที่ซื้อ</div>\n      </ion-col>\n      <ion-col col-2 style="text-align: center;">\n        <div>ราคาต่อชิ้น</div>\n      </ion-col>\n      <ion-col col-2 style="text-align: center;">\n          <div>ราคารวม</div>\n        </ion-col>\n    </ion-row>\n\n\n\n    <div class=\'section\'>\n      <ion-row *ngFor="let item of orderDetailData; index as i;">\n\n        <ion-col col-1 class="border-right" style="text-align: center;">\n          <div>{{i+1}}</div>\n        </ion-col>\n\n        <ion-col col-3 class="border-right"  style="text-align: center;">\n          <div>{{item.PRODUCT_TYPE_NAME}}</div>\n        </ion-col>\n\n        <ion-col class="border-right"  style="text-align: center;" col-2>\n          <div>{{item.PRODUCT_SIZE_NAME}}</div>\n        </ion-col>\n\n        <ion-col class="border-right"  style="text-align: right;" col-2>\n          <div>{{item.ITEM_QTY}}</div>\n        </ion-col>\n\n        <ion-col class="border-right"  style="text-align: right;" col-2>\n          <div>{{item.PRICE_PER_ITEM}}</div>\n        </ion-col>\n        <ion-col style="text-align: right;" col-2>\n            <div>{{item.ITEM_AMNT | number:\'3.2-5\'}}</div>\n          </ion-col>\n  \n      </ion-row>\n\n\n      <ion-row>\n\n          <ion-col class="border-right"  style="text-align: right;" col-10>\n              <div>รวมทั้งสิ้น</div>\n            </ion-col>\n            <ion-col style="text-align: right;" col-2>\n                <div>{{userDisplay.ORDER_NET}}</div>\n              </ion-col>\n      </ion-row>\n    </div>\n\n\n\n  </ion-card> \n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order-detail/all-order-detail.html"*/,
+            selector: 'page-all-order-detail',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order-detail/all-order-detail.html"*/'<!--\n  Generated template for the AllOrderDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>ประวัติการซื้อขาย</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content  class="content-bg" padding>\n  <div style="height: 100%;" id="map_canvas"></div> \n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/all-order-detail/all-order-detail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_rest__["a" /* RestProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */]])
     ], AllOrderDetailPage);
     return AllOrderDetailPage;
 }());
@@ -1577,8 +1625,8 @@ var AllOrderDetailPage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateOrderPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_qr_scanner__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create_order_scan_result_create_order_scan_result__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_qr_scanner__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__create_order_scan_result_create_order_scan_result__ = __webpack_require__(168);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1673,7 +1721,7 @@ var CreateOrderPage = (function () {
     };
     CreateOrderPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-create-order',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order/create-order.html"*/'<!--\n  Generated template for the CreateOderPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ทำรายการรับซื้อ</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="content-bg" padding>\n  <ion-card class="card-container hide-card ">\n    <ion-card-content style="text-align: center;">\n      <div [ngSwitch]="scanStatus">\n        <ion-grid *ngSwitchCase="\'hide\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="add-circle-outline" on-click="callQrScanner()"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n              <p class="add-new-text">\n                กดเพื่อเริ่มทำรายการใหม่\n              </p>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n        <ion-grid *ngSwitchCase="\'show\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="qr-scanner-outline"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n              <p class="add-new-text" on-click="hideCamera()">\n                ยกเลิก\n              </p>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order/create-order.html"*/,
+            selector: 'page-create-order',template:/*ion-inline-start:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order/create-order.html"*/'<!--\n  Generated template for the CreateOderPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>ทำรายการรับซื้อ</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="content-bg camera-display" padding>\n  <ion-card class="card-container hide-card ">\n    <ion-card-content style="text-align: center;">\n      <div [ngSwitch]="scanStatus">\n        <ion-grid *ngSwitchCase="\'hide\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="add-circle-outline" on-click="callQrScanner()"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n              <p class="add-new-text">\n                กดเพื่อเริ่มทำรายการใหม่\n              </p>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n        <ion-grid *ngSwitchCase="\'show\'">\n          <ion-row>\n            <ion-col col-12>\n              <ion-icon class="add-icon" name="qr-scanner-outline"></ion-icon>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n              <p class="add-new-text" on-click="hideCamera()">\n                ยกเลิก\n              </p>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </div>\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Volumes/Work/workspace/github/materialApp/src/pages/create-order/create-order.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_qr_scanner__["a" /* QRScanner */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]])
@@ -1685,5 +1733,5 @@ var CreateOrderPage = (function () {
 
 /***/ })
 
-},[214]);
+},[216]);
 //# sourceMappingURL=main.js.map
